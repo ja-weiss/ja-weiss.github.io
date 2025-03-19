@@ -6,6 +6,39 @@
     margin-top: 20px;
 }
 
+/* Language Switcher */
+#languageSwitcher {
+    background-color: #fff; /* Weißer Hintergrund */
+    color: #000000;            /* Textfarbe */
+    font-size: 16px;        /* Schriftgröße */
+    border: 2px solid #1DB954; /* Rand in Spotify Grün (Beispiel) */
+    border-radius: 5px;     /* Abgerundete Ecken */
+    padding: 4px;          /* Innenabstand */
+    appearance: none;       /* Entfernt die standardmäßige Dropdown-Pfeilanzeige */
+    cursor: pointer;       /* Zeigerzeiger bei Hover */
+    width: 30px;           /* Breite des Dropdowns */
+    transition: all 0.3s ease; /* Weicher Übergang für die Stile */;
+}
+
+/* Stile für das Dropdown, wenn der Benutzer mit der Maus darüber fährt */
+#languageSwitcher:hover {
+    border-color: #1DB954;  /* Hervorhebung beim Hover */
+}
+
+/* Stile für die Optionen im Dropdown */
+#languageSwitcher option {
+    background-color: #fff; /* Hintergrundfarbe für Optionen */
+    color: #333;            /* Textfarbe */
+    padding: 10px;          /* Innenabstand der Optionen */
+}
+
+/* Stile für den ausgewählten Wert */
+#languageSwitcher:focus {
+    outline: none; /* Entfernt die Fokusumrandung */
+    border-color: #1DB954; /* Randfarbe ändern, wenn ausgewählt */
+}
+
+
 /* Hauptinhalt */
 main {
     margin: 0px auto;
