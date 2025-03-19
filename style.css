@@ -126,36 +126,28 @@ main {
 }
 
 .button4 {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 7px 15px;
+    font-size: 12px;
     background-color: #000000;
     color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
     display: block;
-    margin-bottom: 15px;   
+    margin-bottom: 10px;   
 } .button4:hover {
     background-color: #ffffff;
     color:rgba(0, 0, 0);
-    transform: scale(1.1);
+    transform: scale(1.0);
 }
 body.dark-mode .button4 {
-    padding: 10px 20px;
-    font-size: 16px;
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    display: block;
-    margin-bottom: 15px;   
+    color: rgb(0, 0, 0);  
 } body.dark-mode .button4:hover {
     background-color: #000000;
     color:rgb(255, 255, 255);
-    transform: scale(1.1);
+    transform: scale(1.0);
 }
 
 /* Footer */
