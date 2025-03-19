@@ -78,10 +78,11 @@ main {
     margin-top: 10px;
     display: block;
     margin-bottom: 15px;
+    
 }
 
 .button2:hover {
-    background-color: #18d000;
+    background-color: #15b800;
 }
 
 /* Footer */
