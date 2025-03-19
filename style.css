@@ -127,27 +127,28 @@ main {
 
 .button4 {
     padding: 7px 15px;
-    font-size: 12px;
+    font-size: 15px;
     background-color: #000000;
     color: rgb(255, 255, 255);
-    border: none;
+    border: 2px solid white;
     cursor: pointer;
     border-radius: 20px;
     margin-top: 20px;
     display: block;
-    margin-bottom: 10px;   
+    margin-bottom: 15px;   
 } .button4:hover {
     background-color: #ffffff;
     color:rgba(0, 0, 0);
-    transform: scale(1.0);
+    border: 2px solid black
 }
 body.dark-mode .button4 {
     background-color: #ffffff;
-    color: rgb(0, 0, 0);  
+    color: rgb(0, 0, 0);
+    border: 2px solid black
 } body.dark-mode .button4:hover {
     background-color: #000000;
     color:rgb(255, 255, 255);
-    transform: scale(1.0);
+    border: 2px solid rgb(255, 255, 255)
 }
 
 /* Footer */
