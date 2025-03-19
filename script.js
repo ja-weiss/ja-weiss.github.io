@@ -1,7 +1,7 @@
-document.getElementsByClassName("button1").addEventListener("click", function() {
+document.getElementsByClassName("button1")[0].addEventListener("click", function() {
     alert("Why did you click The Button\u2122? .-.");
 });
 
-document.getElementsByClassName("button2").addEventListener("click", function() {
+document.getElementsByClassName("button2")[0].addEventListener("click", function() {
     alert("You clicked The Second Button\u2122.");
 });
