@@ -50,7 +50,7 @@ main {
 }
 
 /* Button */
-button {
+.button1 {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #ff0000;
@@ -59,10 +59,29 @@ button {
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
+    display: block;
+    margin-bottom: 15px;
 }
 
-button:hover {
+.button1:hover {
     background-color: #c00000;
+}
+
+.button2 {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #119100;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.button2:hover {
+    background-color: #18d000;
 }
 
 /* Footer */
