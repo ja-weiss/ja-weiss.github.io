@@ -51,6 +51,7 @@ main {
     align-items: center; /* Zentriert die Buttons horizontal */
     justify-content: center; /* Optional: Zentriert die Buttons vertikal */
     height: 100vh; /* Falls du sie auch vertikal zentrieren möchtest */
+    text-align: center;
     
 }
 
