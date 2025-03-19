@@ -18,6 +18,7 @@
     cursor: pointer;       /* Zeigerzeiger bei Hover */
     width: 30px;           /* Breite des Dropdowns */
     transition: all 0.3s ease; /* Weicher Übergang für die Stile */;
+    margin: -10px;
 }
 
 /* Stile für das Dropdown, wenn der Benutzer mit der Maus darüber fährt */
@@ -41,7 +42,7 @@
 
 /* Hauptinhalt */
 main {
-    margin: 0px auto;
+    margin: 10px auto;
    /* max-width: 600px; */
     background: rgb(255, 255, 255, 0.25);
     color: white;
