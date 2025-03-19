@@ -1,58 +1,3 @@
-/* Allgemeine Stile */
-body, html {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 0;
-    height: 100%;
-    margin: 0;
-}
-
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
-    
-  }
-body.dark-mode main {
-    background: rgb(0, 0, 0, 0.25);
-}
-body.dark-mode .video-background {
-    display: hidden;
-}
-  
-.wrapper {
-    display: flex;      /* Flexbox aktivieren */
-    flex-direction: column;  /* Elemente werden vertikal gestapelt */
-    min-height: 100vh;   /* Die Höhe der Wrapper ist mindestens so hoch wie der Viewport */
-  }
-  
-/* Stil für das Hintergrundvideo */
-.video-background {
-    position: fixed;   /* Fixiert das Video im Hintergrund */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;      /* Deckt den gesamten Viewport ab */
-    z-index: -1;        /* Setzt das Video hinter den Inhalt */
-    overflow: hidden;
-  }
-  
-  video {
-    width: 100%;        /* Video in der Breite skalieren */
-    height: 100%;       /* Video in der Höhe skalieren */
-    object-fit: cover;  /* Skaliert das Video, ohne das Seitenverhältnis zu verzerren */
-  }
-
-/* Header */
-header {
-    color: white;
-    padding: 20px;
-    position:relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-
 #clock {
     font-size: 2em;
     font-family: 'Arial', sans-serif;
@@ -78,7 +23,7 @@ main {
     height: 20px; /* Falls du sie auch vertikal zentrieren möchtest */ 
 }
 
-/* Button */
+/* Buttons */
 .button1 {
     padding: 10px 20px;
     font-size: 16px;
@@ -140,21 +85,4 @@ main {
     background-color: #ffffff;
     color:rgba(0, 0, 0);
     border: 2px solid black
-}
-body.dark-mode .button4 {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: 2px solid black
-} body.dark-mode .button4:hover {
-    background-color: #000000;
-    color:rgb(255, 255, 255);
-    border: 2px solid rgb(255, 255, 255)
-}
-
-/* Footer */
-footer {
-    
-    
-    color: white;
-    padding: 10px;
 }
