@@ -59,7 +59,7 @@ main {
 .button1 {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #ff0000;
+    background-color: #e00000;
     color: white;
     border: none;
     cursor: pointer;
@@ -70,7 +70,7 @@ main {
 }
 
 .button1:hover {
-    background-color: #c00000;
+    background-color: #ff0000;
 }
 
 .button2 {
@@ -88,13 +88,13 @@ main {
 }
 
 .button2:hover {
-    background-color: #15b800;
+    background-color: #14af00;
 }
 
 .button3 {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #edd100;
+    background-color: #ffe100;
     color: rgb(0, 0, 0);
     border: none;
     cursor: pointer;
