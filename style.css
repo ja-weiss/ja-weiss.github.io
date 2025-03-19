@@ -6,6 +6,18 @@ body, html {
     height: 100%;
     margin: 0;
 }
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+    
+  }
+body.dark-mode main {
+    background: rgb(0, 0, 0, 0.25);
+}
+body.dark-mode .video-background {
+    display: hidden;
+}
   
 .wrapper {
     display: flex;      /* Flexbox aktivieren */
@@ -21,6 +33,7 @@ body, html {
     width: 100%;
     height: 100vh;      /* Deckt den gesamten Viewport ab */
     z-index: -1;        /* Setzt das Video hinter den Inhalt */
+    overflow: hidden;
   }
   
   video {
@@ -31,7 +44,6 @@ body, html {
 
 /* Header */
 header {
-    
     color: white;
     padding: 20px;
     position:relative;
@@ -39,6 +51,14 @@ header {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+}
+
+#clock {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* Hauptinhalt */
@@ -56,7 +76,6 @@ main {
     align-items: center; /* Zentriert die Buttons horizontal */
     justify-content: center; /* Optional: Zentriert die Buttons vertikal */
     height: 20px; /* Falls du sie auch vertikal zentrieren möchtest */ 
-    
 }
 
 /* Button */
@@ -71,9 +90,7 @@ main {
     margin-top: 10px;
     display: block;
     margin-bottom: 15px;
-}
-
-.button1:hover {
+} .button1:hover {
     background-color: #ff0000;
 }
 
@@ -88,10 +105,7 @@ main {
     margin-top: 10px;
     display: block;
     margin-bottom: 15px;
-    
-}
-
-.button2:hover {
+} .button2:hover {
     background-color: #14af00;
 }
 
@@ -105,12 +119,43 @@ main {
     border-radius: 5px;
     margin-top: 10px;
     display: block;
-    margin-bottom: 15px;
-    
+    margin-bottom: 15px;   
+} .button3:hover {
+    background-color: #ffe900;
+    transform: scale(1.1);
 }
 
-.button3:hover {
-    background-color: #fbff00;
+.button4 {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: block;
+    margin-bottom: 15px;   
+} .button4:hover {
+    background-color: #ffffff;
+    color:rgba(0, 0, 0);
+    transform: scale(1.1);
+}
+body.dark-mode .button4 {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: block;
+    margin-bottom: 15px;   
+} body.dark-mode .button4:hover {
+    background-color: #000000;
+    color:rgb(255, 255, 255);
+    transform: scale(1.1);
 }
 
 /* Footer */

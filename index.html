@@ -41,8 +41,15 @@
 
     <div class="wrapper">
         <header>
-            <h1>Willkommen auf meiner Webseite!</h1>
-            <p>This site looks best on desktop.</p>
+            <h1 data-lang="welcome">Willkommen auf meiner Webseite!</h1>
+            <p data-lang="info">Diese Seite sieht auf dem Desktop am besten aus.</p>
+            <p id="clock" data-lang="clock">Lade Uhr...</p>
+    
+            <select id="languageSwitcher">
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 Français</option>
+            </select>
         </header>
 
         <main>
@@ -50,6 +57,7 @@
             <button class="button1">The Button&trade;</button>
             <button class="button2">Second Button&trade;</button>
             <button class="button3">Yellow Button</button>
+            <button class="button4" onclick="toggleDarkMode()">Toggle Dark Mode</button>
         </main>
 
         <footer>
