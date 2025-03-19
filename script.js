@@ -6,9 +6,14 @@ document.getElementsByClassName("button2")[0].addEventListener("click", function
     alert("You clicked The Second Button\u2122.");
 });
 
-document.getElementsByClassName("button3")[0].addEventListener("click", function() {
-    document.body.style.backgroundColor = "yellow";
-    setTimeout(() => document.body.style.backgroundColor = "", 1000);
+document.querySelector(".button3").addEventListener("click", function() {
+    const button = document.querySelector(".button3");
+    button.style.transition = "transform 5s ease";
+    button.style.transform = "scale(50.0)"; // Vergrößert den Button
+
+    setTimeout(() => {
+        button.style.transform = "scale(1)"; // Verkleinert den Button wieder
+    }, 5000);
 });
 
 
