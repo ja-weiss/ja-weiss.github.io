@@ -45,7 +45,7 @@ header {
 main {
     margin: 50px auto;
     max-width: 600px;
-    background: rgba(9, 0, 105, 0);
+    background: rgb(255, 255, 255, 0.25);
     color: white;
     padding: 20px;
     border-radius: 10px;
