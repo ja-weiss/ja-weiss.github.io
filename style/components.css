@@ -95,6 +95,5 @@ main {
     margin: 20px;
 } .spotify iframe {
     max-width: 100%;
-    width: 50%;
-    height: 152px;
+    width: 75%;
 }
