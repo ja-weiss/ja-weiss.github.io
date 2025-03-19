@@ -9,3 +9,4 @@ document.getElementsByClassName("button2")[0].addEventListener("click", function
 document.getElementsByClassName("button3")[0].addEventListener("click", function() {
     alert("I don't know what else to say...");
 });
+ 
