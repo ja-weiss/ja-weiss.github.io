@@ -70,9 +70,15 @@ main {
     margin-top: 10px;
     display: block;
     margin-bottom: 15px;
-    
+    position: absolute;
+    top: 320px; /* Position relativ zum nächsten positionierten Vorfahren */
+    left: 50%; /* Zentriert den Button horizontal */
+    transform: translateX(-50%); /* Korrigiert die Zentrierung */
 } .button1:hover {
     background-color: #ff0000;
+} .button1placeholder {
+    height: 40px; /* Höhe des Buttons */
+    margin-bottom: 15px; /* Gleicher Abstand wie der Button */
 }
 
 .button2 {
