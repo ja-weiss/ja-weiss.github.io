@@ -14,3 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.add("dark-mode");
   }
 });
+
+function toggleVideoBG() {
+    const videoBackground = document.getElementById("videoBackground");
+
+    if (videoBackground.paused) {
+      videoBackground.play();  // Startet das Video
+    } else {
+      videoBackground.pause(); // Pausiert das Video
+    }
+}

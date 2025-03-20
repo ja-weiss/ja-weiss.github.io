@@ -149,6 +149,21 @@ main {
     border: 2px solid black;
 }
 
+.button5 {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background: #00a9d3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+} .button5:hover {
+    background: #555;
+}
+
 .spotify {
     display: flex;
     justify-content: center;

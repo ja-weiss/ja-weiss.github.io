@@ -10,7 +10,7 @@ body.dark-mode {
 .dark-mode .video-background video {
     transition: all 0.5s ease;
     filter: brightness(50%);
-}
+} 
 
 .dark-mode #languageSwitcher {
     background-color: #000000;
