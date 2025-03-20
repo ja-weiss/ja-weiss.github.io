@@ -70,6 +70,7 @@ main {
     margin-top: 10px;
     display: block;
     margin-bottom: 15px;
+    
 } .button1:hover {
     background-color: #ff0000;
 }
