@@ -11,10 +11,10 @@ document.getElementsByClassName("button2")[0].addEventListener("click", function
 /* Button 3 */
 document.querySelector(".button3").addEventListener("click", function() {
     const button = document.querySelector(".button3");
-    button.style.transition = "transform 5s ease";
+    button.style.transition = "transform 2s ease-in-out"; // Animation für den Button
     button.style.transform = "scale(50.0)"; // Vergrößert den Button
 
     setTimeout(() => {
         button.style.transform = "scale(1)"; // Verkleinert den Button wieder
-    }, 5000);
+    }, 2000);
 });

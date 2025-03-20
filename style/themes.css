@@ -15,7 +15,16 @@ body.dark-mode main {
 body.dark-mode #languageSwitcher {
     background-color: #000000;
     color: #ffffff;
-    border: 2px solid white;
+    border: 2px solid rgb(0, 0, 0);
+} .dark-mode #languageSwitcher:hover {
+    border-color: #ffffff;  /* Hervorhebung beim Hover */
+} .dark-mode #languageSwitcher option {
+    background-color: #000000; /* Hintergrundfarbe für Optionen */
+    color: #ffffff;            /* Textfarbe */
+    padding: 10px;          /* Innenabstand der Optionen */
+} .dark-mode #languageSwitcher:focus {
+    outline: none; /* Entfernt die Fokusumrandung */
+    border-color: #1DB954; /* Randfarbe ändern, wenn ausgewählt */
 }
 
 /* Buttons */

@@ -11,10 +11,9 @@
     background-color: #fff; /* Weißer Hintergrund */
     color: #000000;            /* Textfarbe */
     font-size: 16px;        /* Schriftgröße */
-    border: 2px solid #000000; /* Rand in Spotify Grün (Beispiel) */
+    border: 2px solid white; /* Rand in Spotify Grün (Beispiel) */
     border-radius: 5px;     /* Abgerundete Ecken */
     padding: 4px;          /* Innenabstand */
-    appearance: ;       /* Entfernt die standardmäßige Dropdown-Pfeilanzeige */
     cursor: pointer;       /* Zeigerzeiger bei Hover */
     width: 50px;           /* Breite des Dropdowns */
     transition: all 0.5s ease; /* Weicher Übergang für die Stile */;
@@ -23,7 +22,7 @@
 
 /* Stile für das Dropdown, wenn der Benutzer mit der Maus darüber fährt */
 #languageSwitcher:hover {
-    border-color: #1DB954;  /* Hervorhebung beim Hover */
+    border-color: #000000;  /* Hervorhebung beim Hover */
 }
 
 /* Stile für die Optionen im Dropdown */
@@ -120,7 +119,7 @@ main {
 } .button4:hover {
     background-color: #ffffff;
     color:rgba(0, 0, 0);
-    border: 2px solid black
+    border: 2px solid black;
 }
 
 .spotify {
