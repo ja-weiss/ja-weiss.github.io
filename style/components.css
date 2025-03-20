@@ -149,19 +149,59 @@ main {
     border: 2px solid black;
 }
 
-.button5 {
+/* Der Wrapper für den Schalter */
+.vbgSwitch {
     position: absolute;
     top: 10px;
     right: 10px;
-    padding: 8px 12px;
-    background: #00afdb;
-    color: white;
-    border: none;
+    display: inline-flex;
+    width: 60px;
+    height: 34px;
+  }
+  /* Der eigentliche Schalter (Hintergrund) */
+  .vbgSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  /* Das Design des Schalter-Sliders */
+  .vbgSwitch .slider {
+    position: absolute;
     cursor: pointer;
-    border-radius: 5px;
-    z-index: 1000;
-} .button5:hover {
-    background: #00b8e6;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  /* Der Kreis (der Schieberegler) */
+  .vbgSwitch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+  }
+  /* Wenn der Schalter aktiviert ist */
+  .vbgSwitch input:checked + .slider {
+    background-color: #21adf3;
+  }
+  /* Wenn der Kreis auf der rechten Seite ist (aktiviert) */
+  .vbgSwitch input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  .switchText {
+    margin-left: -90px;  /* Abstand zwischen Schalter und Text */
+    font-size: 13px;    /* Schriftgröße des Textes */
+    color: #fff;        /* Farbe des Textes */
+    display: inline-block;
+    line-height: 17px;  /* Vertikale Ausrichtung des Textes */
 }
 
 .spotify {

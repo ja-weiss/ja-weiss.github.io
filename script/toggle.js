@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-function toggleVideoBG() {
+/*function toggleVideoBG() {
     const videoBackground = document.getElementById("videoBackground");
 
     if (videoBackground.paused) {
@@ -35,4 +35,31 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
       videoBackground.pause(); // Pausiere das Video, wenn "disabled"
   }
+});*/
+function toggleVideoBG() {
+  const videoBackground = document.getElementById("videoBackground");
+  const toggleSwitch = document.getElementById("toggleVideoBG");
+
+  if (toggleSwitch.checked) {
+      videoBackground.play();  // Startet das Video
+      localStorage.setItem("videoBackground", "enabled");
+  } else {
+      videoBackground.pause();  // Pausiert das Video
+      localStorage.setItem("videoBackground", "disabled");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const videoBackground = document.getElementById("videoBackground");
+  const toggleSwitch = document.getElementById("toggleVideoBG");
+
+  // Überprüfe den gespeicherten Zustand im localStorage
+  if (localStorage.getItem("videoBackground") === "enabled") {
+      videoBackground.play();  // Stelle sicher, dass das Video abgespielt wird
+      toggleSwitch.checked = true;  // Setze den Schalter auf "on"
+  } else {
+      videoBackground.pause();  // Pausiere das Video
+      toggleSwitch.checked = false;  // Setze den Schalter auf "off"
+  }
 });
+
