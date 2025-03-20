@@ -3,13 +3,13 @@
 const translations = {
     "de": {
         "welcome": "Willkommen auf meiner Webseite!",
-        "info": "Diese Seite sieht auf dem Desktop am besten aus.",
+        "info": "Diese Seite wird in der mobilen Ansicht vermutlich nicht wie vorgesehen dargestellt.",
         "darkmode": "Aktiviere Dark Mode für bessere Lesbarkeit.",
         "clock": "Lade Uhr..."
     },
     "en": {
         "welcome": "Welcome to my website!",
-        "info": "This site looks best on desktop.",
+        "info": "Optimized for desktop, this site may not render as intended on mobile.",
         "darkmode": "Enable dark mode for better readability.",
         "clock": "Loading clock..."
     },
