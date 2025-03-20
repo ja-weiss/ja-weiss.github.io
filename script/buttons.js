@@ -5,8 +5,8 @@ document.getElementsByClassName("button1")[0].addEventListener("click", function
 
 document.querySelector(".button2").addEventListener("click", function() {
     document.getElementById("alertMessage").innerHTML = 
-        "- number generator<br>- minigame<br><br>" +
-        "<s>- spotify embed<br>- language switcher<br>- dark mode<br>- clock</s>";
+        "- weather<br>- number generator<br>- minigame<br><br>" +
+        "<s>- particles<br>- spotify embed<br>- language switcher<br>- dark mode<br>- clock<br>- random buttons<br>- video background</s>";
     document.getElementById("customAlert").style.display = "block";
 });
 
