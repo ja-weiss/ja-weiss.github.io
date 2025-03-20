@@ -88,6 +88,33 @@ main {
 } .button2:hover {
     background-color: #14af00;
 }
+#customAlert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: #000000;
+    padding: 20px;
+    border: 2px solid black;
+    z-index: 100;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+} #customAlert button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+} #customAlert button:hover {
+    transform: scale(1.1);
+}
 
 .button3 {
     padding: 10px 20px;
