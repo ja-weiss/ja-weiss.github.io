@@ -154,14 +154,14 @@ main {
     top: 10px;
     right: 10px;
     padding: 8px 12px;
-    background: #00bdec;
+    background: #00afdb;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     z-index: 1000;
 } .button5:hover {
-    background: #00cde4;
+    background: #00b8e6;
 }
 
 .spotify {

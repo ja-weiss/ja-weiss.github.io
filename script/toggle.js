@@ -20,7 +20,19 @@ function toggleVideoBG() {
 
     if (videoBackground.paused) {
       videoBackground.play();  // Startet das Video
+      localStorage.setItem("videoBackground", "enabled");
     } else {
       videoBackground.pause(); // Pausiert das Video
+      localStorage.setItem("videoBackground", "disabled");
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const videoBackground = document.getElementById("videoBackground");
+
+  // Überprüfe den gespeicherten Zustand im localStorage
+  if (localStorage.getItem("videoBackground") === "enabled") {
+      videoBackground.play();  // Stelle sicher, dass das Video abgespielt wird
+  } else {
+      videoBackground.pause(); // Pausiere das Video, wenn "disabled"
+  }
+});
