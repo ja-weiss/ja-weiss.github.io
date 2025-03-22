@@ -1,3 +1,4 @@
+/* 
 const audio = document.getElementById("audio");
 const canvas = document.getElementById("visualizer");
 const ctx = canvas.getContext("2d");
@@ -68,7 +69,10 @@ function draw() {
         }
 
         // Berechne die Höhe des Balkens als Mittelwert der aggregierten Frequenzen
-        barHeight = (sum / barWidthFactor) / 256 * (canvas.height * (barHeightFactor / 100));
+        barHeight = (sum / barWidthFactor) / 256 * canvas.height;
+
+        // Skaliere die Balkenhöhe basierend auf dem barHeightFactor (Prozent der Canvas-Höhe)
+        barHeight = barHeight * (barHeightFactor / 100);
 
         // Sanfte Übergänge für die Animation
         barHeight = (barHeight + previousDataArray[i]) / 2;
