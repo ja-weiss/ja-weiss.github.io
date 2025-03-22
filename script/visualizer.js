@@ -45,11 +45,16 @@ function draw() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    // Berechne die Balkenbreite basierend auf dem Canvas und dem barWidthFactor
     let barWidth = (canvas.width / bufferLength) * barWidthFactor;
     let barHeight;
     let x = 0;
 
+    // Berechne den Abstand der Balken basierend auf der Breite
+    let barSpacing = Math.max(1, (canvas.width - (barWidth * bufferLength)) / (bufferLength - 1));
+
     for (let i = 0; i < bufferLength; i++) {
+        // Berechne die Höhe des Balkens in Bezug auf den Prozentwert der Canvas-Höhe
         barHeight = (dataArray[i] / 256) * (canvas.height * (barHeightFactor / 100));
 
         // Sanfte Übergänge für die Animation
@@ -66,7 +71,8 @@ function draw() {
         // Speichern der aktuellen Frequenz für den nächsten Frame
         previousDataArray[i] = dataArray[i];
 
-        x += barWidth + 1;
+        // X-Wert für den nächsten Balken
+        x += barWidth + barSpacing;
     }
 }
 
