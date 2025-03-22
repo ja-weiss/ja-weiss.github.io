@@ -8,7 +8,7 @@ let dataArray, bufferLength;
 
 // Werte für die Steuerung
 let barWidthFactor = 2.5; // Balkenbreite
-let barHeightFactor = 1;  // Balkenhöhe
+let barHeightFactor = 100;  // Balkenhöhe als Prozentwert der Canvas-Höhe (default: 100% der Höhe)
 let colorValue = 100;     // Farbwert (für RGB)
 let previousDataArray = new Uint8Array(256); // Für Animationseffekt
 
@@ -50,7 +50,7 @@ function draw() {
     let x = 0;
 
     for (let i = 0; i < bufferLength; i++) {
-        barHeight = dataArray[i] / barHeightFactor;
+        barHeight = (dataArray[i] / 256) * (canvas.height * (barHeightFactor / 100));
 
         // Sanfte Übergänge für die Animation
         barHeight = (barHeight + previousDataArray[i]) / 2;
@@ -79,7 +79,7 @@ barWidthRange.addEventListener("input", (event) => {
     barWidthFactor = event.target.value;
 });
 
-// Steuerung für die Balkenhöhe
+// Steuerung für die Balkenhöhe (jetzt in Prozent der Canvas-Höhe)
 const barHeightRange = document.getElementById("barHeightRange");
 barHeightRange.addEventListener("input", (event) => {
     barHeightFactor = event.target.value;
