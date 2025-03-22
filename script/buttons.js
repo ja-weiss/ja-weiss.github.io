@@ -1,6 +1,6 @@
 /* Button 1 */
 document.getElementsByClassName("button1")[0].addEventListener("click", function() {
-    alert("How did you click The Button\u2122??");
+    alert("How did you do that??");
 });
 
 document.querySelector(".button2").addEventListener("click", function() {
