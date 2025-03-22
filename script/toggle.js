@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* Toggle Video Background */
+document.getElementById("toggleVideoBG").checked = true; // Setzt den Toggle auf aktiv
+
 function toggleVideoBG() {
   const videoBackground = document.getElementById("videoBackground");
   const toggleSwitch = document.getElementById("toggleVideoBG");
