@@ -20,7 +20,7 @@ function toggleVideoBG() {
   const videoBackground = document.getElementById("videoBackground");
   const toggleSwitch = document.getElementById("toggleVideoBG");
   
-  if (toggleSwitch.checked) {
+  if (videoBackground.paused) {
       videoBackground.play();  // Startet das Video
       localStorage.setItem("videoBackground", "enabled");
   } else {
@@ -42,4 +42,4 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleSwitch.checked = false;  // Setze den Schalter auf "off"
   }
 });
-toggleVideoBG();
+toggleVideoBG(); // Starte die Funktion, um das Video zu pausieren
