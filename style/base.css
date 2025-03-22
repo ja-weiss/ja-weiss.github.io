@@ -21,7 +21,7 @@ body, html {
     width: 100%;        /* Video in der Breite skalieren */
     height: 100%;       /* Video in der Höhe skalieren */
     object-fit: cover;  /* Skaliert das Video, ohne das Seitenverhältnis zu verzerren */
-    transition: all 0.5s ease;
+    transition: all 1s ease-out;
 }
 
 /* Wrapper */
@@ -67,4 +67,9 @@ footer ul li a {
 
 footer ul li a:hover {
     color: #ffffff8e; /* Beispielfarbe (kann für jedes Netzwerk angepasst werden) */
+}
+
+footer p a {
+    color: rgb(144, 231, 255);
+    transition: all 1s ease-out;
 }
