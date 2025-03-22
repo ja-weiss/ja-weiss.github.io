@@ -7,8 +7,8 @@ let audioCtx, analyser, source;
 let dataArray, bufferLength;
 
 // Werte für die Steuerung
-let barWidthFactor = 2.5; // Balkenbreite
-let barHeightFactor = 100;  // Balkenhöhe als Prozentwert der Canvas-Höhe (default: 100% der Höhe)
+let barWidthFactor = 2.5; // Balkenbreite (skalierbar)
+let barHeightFactor = 100;  // Balkenhöhe als Prozentwert der Canvas-Höhe
 let colorValue = 100;     // Farbwert (für RGB)
 let previousDataArray = new Uint8Array(256); // Für Animationseffekt
 
@@ -45,17 +45,30 @@ function draw() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Berechne die Balkenbreite basierend auf dem Canvas und dem barWidthFactor
-    let barWidth = (canvas.width / bufferLength) * barWidthFactor;
+    // Berechne die Anzahl der Balken, die wir anzeigen möchten
+    const barCount = Math.floor(bufferLength / barWidthFactor);
+
+    // Berechne die Breite eines Balkens
+    let barWidth = (canvas.width / barCount);
+
     let barHeight;
     let x = 0;
 
     // Berechne den Abstand der Balken basierend auf der Breite
-    let barSpacing = Math.max(1, (canvas.width - (barWidth * bufferLength)) / (bufferLength - 1));
+    let barSpacing = Math.max(1, (canvas.width - (barWidth * barCount)) / (barCount - 1));
 
-    for (let i = 0; i < bufferLength; i++) {
-        // Berechne die Höhe des Balkens in Bezug auf den Prozentwert der Canvas-Höhe
-        barHeight = (dataArray[i] / 256) * (canvas.height * (barHeightFactor / 100));
+    for (let i = 0; i < barCount; i++) {
+        // Aggregiere die Daten für mehrere benachbarte Balken
+        let sum = 0;
+        for (let j = 0; j < barWidthFactor; j++) {
+            let dataIndex = i * barWidthFactor + j;
+            if (dataIndex < bufferLength) {
+                sum += dataArray[dataIndex];
+            }
+        }
+
+        // Berechne die Höhe des Balkens als Mittelwert der aggregierten Frequenzen
+        barHeight = (sum / barWidthFactor) / 256 * (canvas.height * (barHeightFactor / 100));
 
         // Sanfte Übergänge für die Animation
         barHeight = (barHeight + previousDataArray[i]) / 2;
@@ -69,7 +82,7 @@ function draw() {
         ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
 
         // Speichern der aktuellen Frequenz für den nächsten Frame
-        previousDataArray[i] = dataArray[i];
+        previousDataArray[i] = sum / barWidthFactor;
 
         // X-Wert für den nächsten Balken
         x += barWidth + barSpacing;
