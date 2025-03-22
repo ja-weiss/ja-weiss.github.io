@@ -90,3 +90,23 @@ const colorRange = document.getElementById("colorRange");
 colorRange.addEventListener("input", (event) => {
     colorValue = event.target.value;
 });
+
+// Anpassung der Canvas-Auflösung basierend auf der Gerätedichte
+function setCanvasSize() {
+    const ratio = window.devicePixelRatio || 1;
+    const width = canvas.clientWidth * ratio;
+    const height = canvas.clientHeight * ratio;
+
+    // Canvas-Größe auf die skalierte Größe setzen
+    canvas.width = width;
+    canvas.height = height;
+
+    // Setze den Kontext-Scale auf den gleichen Wert wie die Skalierung
+    ctx.scale(ratio, ratio);
+}
+
+// Initialisiere die Canvas-Größe beim Laden
+setCanvasSize();
+
+// Rufe diese Funktion bei der Fenstergrößeänderung auf
+window.addEventListener('resize', setCanvasSize);

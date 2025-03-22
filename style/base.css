@@ -5,10 +5,6 @@ body, html {
     padding: 0;
     height: 100vh;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 
@@ -41,10 +37,8 @@ body, html {
 header {
     color: white;
     padding: 20px;
-    position:relative;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
     text-align: center;
 }
 
