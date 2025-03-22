@@ -16,18 +16,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* Toggle Video Background */
-document.getElementById("toggleVideoBG").checked = true; // Setzt den Toggle auf aktiv
+document.getElementById("toggleVideoBG").checked = true;
+document.getElementById("videoBackground").play; 
 
 function toggleVideoBG() {
   const videoBackground = document.getElementById("videoBackground");
   const toggleSwitch = document.getElementById("toggleVideoBG");
   
-  if (toggleSwitch.checked) {
+  if (!toggleSwitch.checked) {
+      videoBackground.pause();  // Pausiert das Video
+      localStorage.setItem("videoBackground", "disabled")
+  } else {
       videoBackground.play();  // Startet das Video
       localStorage.setItem("videoBackground", "enabled");
-  } else {
-      videoBackground.pause();  // Pausiert das Video
-      localStorage.setItem("videoBackground", "disabled");
   }
 }
 
