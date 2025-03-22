@@ -101,8 +101,7 @@ function setCanvasSize() {
     canvas.width = width;
     canvas.height = height;
 
-    // Setze den Kontext-Scale auf den gleichen Wert wie die Skalierung
-    ctx.scale(ratio, ratio);
+    // Setze die Skalierung des Canvas-Kontexts nicht, sondern lass die Standardgröße erhalten
 }
 
 // Initialisiere die Canvas-Größe beim Laden
