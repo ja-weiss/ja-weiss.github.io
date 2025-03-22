@@ -3,8 +3,12 @@ body, html {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 0;
-    height: 100%;
+    height: 100vh;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -27,6 +31,8 @@ body, html {
 /* Wrapper */
 .wrapper {
     display: flex;      /* Flexbox aktivieren */
+    justify-content: center;
+    align-items: center;
     flex-direction: column;  /* Elemente werden vertikal gestapelt */
     min-height: 100vh;   /* Die Höhe der Wrapper ist mindestens so hoch wie der Viewport */
   }

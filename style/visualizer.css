@@ -4,8 +4,8 @@
     align-items: center;
     flex: 1;
     margin: 20px auto;
-    width: 800px;
-    height: 500px;
+    width: 90%;
+    height: 600px;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -13,6 +13,7 @@
 .toggleAudio {
     padding: 10px 20px;
     font-size: 18px;
+    width: 100px;
     border: none;
     cursor: pointer;
     border-radius: 5px;

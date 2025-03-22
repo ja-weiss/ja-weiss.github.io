@@ -6,54 +6,87 @@ const toggleButton = document.getElementById("toggleAudio");
 let audioCtx, analyser, source;
 let dataArray, bufferLength;
 
-toggleButton.addEventListener("click", setupAudioContext);
+// Werte für die Steuerung
+let barWidthFactor = 2.5; // Balkenbreite
+let barHeightFactor = 1;  // Balkenhöhe
+let colorValue = 100;     // Farbwert (für RGB)
+let previousDataArray = new Uint8Array(256); // Für Animationseffekt
+
 // Starte die Audio-Analyse beim ersten Klick
 function setupAudioContext() {
-    audio.volume = 1.0;
-    // Audio umschalten (Play/Pause)
-    if (audio.paused) {
-        audio.play(); // Audio starten
-        toggleButton.textContent = "Pause";
-    } else {
-        audio.pause(); // Audio stoppen
-        toggleButton.textContent = "Play";
-    }
-    // Initialisiere den AudioContext nur einmal und beim ersten Klick
     if (!audioCtx) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        analyser = audioCtx.createAnalyser();
+        source = audioCtx.createMediaElementSource(audio);
+        source.connect(analyser);
+        analyser.connect(audioCtx.destination);
 
-        // AudioContext benötigt eine Interaktion, um den Kontext zu starten
-        audioCtx.resume().then(() => {
-            analyser = audioCtx.createAnalyser();
-            source = audioCtx.createMediaElementSource(audio);
-            source.connect(analyser);
-            analyser.connect(audioCtx.destination);
+        analyser.fftSize = 256;
+        bufferLength = analyser.frequencyBinCount;
+        dataArray = new Uint8Array(bufferLength);
 
-            analyser.fftSize = 256;
-            bufferLength = analyser.frequencyBinCount;
-            dataArray = new Uint8Array(bufferLength);
-
-            draw(); // Starte den Visualizer nach der Initialisierung
-        });
+        draw();
     }
-    
+
+    // Audio umschalten (Play/Pause)
+    if (audio.paused) {
+        audio.play();
+        toggleButton.textContent = "Pause";
+    } else {
+        audio.pause();
+        toggleButton.textContent = "Play";
+    }
 }
 
 // Zeichne den Visualizer auf das Canvas
 function draw() {
-    requestAnimationFrame(draw); // Rekursiver Aufruf für kontinuierliches Zeichnen
-    analyser.getByteFrequencyData(dataArray); // Frequenzdaten aus dem Analyser holen
+    requestAnimationFrame(draw);
+    analyser.getByteFrequencyData(dataArray);
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Canvas zurücksetzen
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    let barWidth = (canvas.width / bufferLength) * 2.5;
+    let barWidth = (canvas.width / bufferLength) * barWidthFactor;
     let barHeight;
     let x = 0;
 
     for (let i = 0; i < bufferLength; i++) {
-        barHeight = dataArray[i] / 2;
-        ctx.fillStyle = `rgb(${barHeight + 100}, 50, 255)`;
+        barHeight = dataArray[i] / barHeightFactor;
+
+        // Sanfte Übergänge für die Animation
+        barHeight = (barHeight + previousDataArray[i]) / 2;
+
+        // Dynamische Farbänderung basierend auf dem Farbwert
+        let r = colorValue;
+        let g = barHeight + 100;
+        let b = 255 - barHeight;
+
+        ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
         ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+
+        // Speichern der aktuellen Frequenz für den nächsten Frame
+        previousDataArray[i] = dataArray[i];
+
         x += barWidth + 1;
     }
 }
+
+// Event-Listener für die Steuerungen
+toggleButton.addEventListener("click", setupAudioContext);
+
+// Steuerung für die Balkenbreite
+const barWidthRange = document.getElementById("barWidthRange");
+barWidthRange.addEventListener("input", (event) => {
+    barWidthFactor = event.target.value;
+});
+
+// Steuerung für die Balkenhöhe
+const barHeightRange = document.getElementById("barHeightRange");
+barHeightRange.addEventListener("input", (event) => {
+    barHeightFactor = event.target.value;
+});
+
+// Steuerung für den Farbwert
+const colorRange = document.getElementById("colorRange");
+colorRange.addEventListener("input", (event) => {
+    colorValue = event.target.value;
+});
