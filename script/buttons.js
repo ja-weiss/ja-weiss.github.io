@@ -7,9 +7,8 @@ document.querySelector(".button2").addEventListener("click", function() {
     document.getElementById("alertMessage").innerHTML = 
         "- weather<br>- number generator<br>- minigame<br><br>" +
         "<s>- particles<br>- spotify embed<br>- language switcher<br>- dark mode<br>- clock<br>- random buttons<br>- video background</s>";
-    document.getElementById("customAlert").style.display = "block";
+    document.getElementById("customAlert").style.display = "flex";
 });
-
 function closeAlert() {
     document.getElementById("customAlert").style.display = "none";
 }

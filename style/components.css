@@ -85,9 +85,8 @@ main {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
-    display: block;
-    margin-bottom: 15px;
+    margin: 10px;
+    
 } .button2:hover {
     background-color: #14af00;
 }
@@ -97,6 +96,7 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 16px;
     background: white;
     color: #000000;
     padding: 10px;
@@ -109,6 +109,9 @@ main {
     max-width: 300px;
     border-radius: 10px;
     transition: all 0.5s ease;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 } #customAlert button {
     margin-top: 10px;
     padding: 10px 20px;
@@ -130,9 +133,7 @@ main {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
-    display: block;
-    margin-bottom: 15px;   
+    margin: 10px;  
 } .button3:hover {
     background-color: #ffe900;
     transform: scale(1.1);
@@ -146,9 +147,9 @@ main {
     border: 2px solid white;
     cursor: pointer;
     border-radius: 20px;
+    margin: 10px;
     margin-top: 20px;
-    display: block;
-    margin-bottom: 15px;   
+    
 } .button4:hover {
     background-color: #ffffff;
     color:rgba(0, 0, 0);
@@ -204,7 +205,7 @@ main {
     transform: translateX(26px);
   }
   .switchText {
-    margin-left: -90px;  /* Abstand zwischen Schalter und Text */
+    margin-left: -85px;  /* Abstand zwischen Schalter und Text */
     font-size: 13px;    /* Schriftgröße des Textes */
     color: #fff;        /* Farbe des Textes */
     display: inline-block;
