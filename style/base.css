@@ -17,11 +17,14 @@ body, html {
     height: 100vh;      /* Deckt den gesamten Viewport ab */
     z-index: -2;        /* Setzt das Video hinter den Inhalt */
     overflow: hidden;
+
   } video {
+    top: 0;
+    left: 0;
     width: 100%;        /* Video in der Breite skalieren */
     height: 100%;       /* Video in der Höhe skalieren */
     object-fit: cover;  /* Skaliert das Video, ohne das Seitenverhältnis zu verzerren */
-    transition: all 1s ease-out;
+    transition: filter 1s ease-out, transform 0.1s ease-in-out;
 }
 
 /* Wrapper */

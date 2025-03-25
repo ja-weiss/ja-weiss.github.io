@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
+/* Toggle Video Background */
 function toggleVideoBG() {
   const videoBackground = document.getElementById("videoBackground");
   const toggleSwitch = document.getElementById("toggleVideoBG");

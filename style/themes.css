@@ -9,7 +9,6 @@ body.dark-mode {
 }
 
 .dark-mode .video-background video {
-    
     filter: brightness(50%);
 } 
 

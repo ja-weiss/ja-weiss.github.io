@@ -1,0 +1,58 @@
+#openNetflix {
+    padding: 18px;
+    margin: 20px;
+    width: 200px; /* Breite des Buttons */
+    height: 75px; /* Höhe des Buttons */
+    background-image: url('images/netflix-wordmark.svg'); /* Bild als Hintergrund */
+    border: none; /* Kein Rahmen */
+    border-radius: 5px;
+    cursor: pointer; /* Mauszeiger auf Klickbar ändern */
+    text-indent: -99px;
+    overflow: hidden; /* Verhindert, dass Text sichtbar bleibt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: all 0.1s ease;
+} #openNetflix img {
+    height: 100%;
+    width: 100%;
+}
+#openNetflix:hover {
+    transform: scale(1.05);
+}
+
+/* Fullscreen Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Video Styling */
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Neuer Inhalt nach dem Intro */
+.new-content {
+    display: none;
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* Elemente werden vertikal gestapelt */
+    min-height: 100vh;
+}
