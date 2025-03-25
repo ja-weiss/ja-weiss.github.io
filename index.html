@@ -26,15 +26,16 @@
     
 </head>
 <body>
-    <div class="video-background">
-        <video id="videoBackground" autoplay muted loop>
-          <source src="images/background.mp4" type="video/mp4">
-          Dein Browser unterstützt das Videoformat nicht.
-        </video>
-    </div>
-    <div id="particles"></div>
-    
     <div class="wrapper">
+
+        <div class="video-background">
+            <video id="videoBackground" autoplay muted loop>
+            <source src="images/background.mp4" type="video/mp4">
+            Video format not supported
+            </video>
+        </div>
+        <div id="particles"></div>
+
         <header>
             <h1 data-lang="welcome">Willkommen auf meiner Webseite!</h1>
             <p data-lang="info">Optimized for desktop, this site may not render as intended on mobile.</p>
@@ -82,10 +83,10 @@
     </div>
 
     <div class="overlay" id="overlay">
-        <video id="intro-video" src="images/netflix-intro.mp4"></video>
+        <video id="intro-video" src="images/netflix-intro.mp4" type="video/mp4"></video>
     </div>
 
-    <div class="new-content" id="new-content">
+    <div class="netflix" id="netflix">
         
         <p>There's nothing here yet. Refresh the page.</p>
 

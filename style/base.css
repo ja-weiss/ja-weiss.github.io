@@ -5,8 +5,12 @@ body, html {
     padding: 0;
     height: 100vh;
     margin: 0;
+    overflow-x: hidden;
+    scrollbar-width: none;  
 }
-
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari: Scroll-Leiste ausblenden */
+}
 
 /* Hintergrund-Video */
 .video-background {

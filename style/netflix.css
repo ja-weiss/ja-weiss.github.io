@@ -21,6 +21,22 @@
 #openNetflix:hover {
     transform: scale(1.05);
 }
+#openNetflix.clicked {
+    animation: popButton 1s cubic-bezier(.17,.67,.7,.97) forwards;
+}
+/* Animation für den Button */
+@keyframes popButton {
+    10% {
+        transform: scale(0.9);
+    }
+    20% {
+        transform: scale(1);
+        transition: transform ease-in;
+    }    
+    100% {
+        transform: scale(16.0);
+    }
+}
 
 /* Fullscreen Overlay */
 .overlay {
@@ -46,13 +62,33 @@
 }
 
 /* Neuer Inhalt nach dem Intro */
-.new-content {
+.netflix {
     display: none;
     text-align: center;
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     justify-content: center;
     align-items: center;
     flex-direction: column;  /* Elemente werden vertikal gestapelt */
     min-height: 100vh;
 }
+
+@keyframes popUp {
+    0% {
+      opacity: 0;
+      transform: scale(0.1);
+    }
+    85% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .netflix * {
+    animation: popUp 1s ease-in-out forwards;
+  }
+  
