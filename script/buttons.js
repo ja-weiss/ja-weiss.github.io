@@ -24,3 +24,13 @@ document.querySelector(".button3").addEventListener("click", function() {
         button.style.transform = "scale(1)"; // Verkleinert den Button wieder
     }, 2000);
 });
+
+document.querySelectorAll(".button4").forEach((button) => {
+    button.addEventListener("mousemove", (e) => {
+        const rect = button.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        button.style.setProperty("--glow-x", `${x}px`);
+        button.style.setProperty("--glow-y", `${y}px`);
+    });
+});

@@ -48,12 +48,12 @@
             </header>
                 <label class="vbgSwitch">
                     <input type="checkbox" id="toggleVideoBG" onclick="toggleVideoBG()" checked>
-                    <span class="slider"></span>
+                    <span class="vbgSlider" id="vbgSlider"></span>
                     <span class="switchText">Video<br>Background</span>
                 </label>
         <div class="defaultPage-wrapper2">
 
-            <main>
+            <main class="main1">
                 <p>Click The Button&trade;.</p>
                 <div class="button1placeholder" id="button1placeholder"></div>
                 <button class="button1">The Button&trade;</button>
@@ -66,16 +66,19 @@
                 <button id="openNetflix" onclick="startNetflix()">
                     <img src="images/netflix-wordmark.svg" alt="Netflix">
                 </button>
-                <button class="button4" onclick="toggleDarkMode()">&#x1F31E;/&#x1F319;</button>
                 
-
+                
             </main>
 
-            <main>
-                <p>Second Panel</p>
+            <main class="main2">
+                <p>Dark Mode</p>
+                <label class="darkModeSwitch"> 
+                    <input type="checkbox" id="toggleDarkMode" onclick="toggleDarkMode()"> 
+                    <span class="darkModeSlider"></span>
+                </label>
+                <button class="button4" id="button4">Fancy Button</button>
             </main>
 
-            
         </div>
         <footer>
             <ul>
@@ -83,7 +86,7 @@
                 <li><a href="https://open.spotify.com/user/31mx7lne3c5dgy7bnhmqiwxliuie?si=304cb589929f48e6" target="_blank"><i class="fab fa-spotify"></i></a></li>
                 <li><a href="https://github.com/ja-weiss" target="_blank"><i class="fab fa-github"></i></a></li>
             </ul>
-            <p><a href="https://github.com/ja-weiss/ja-weiss.github.io/issues/new" target="_blank">Report Bug</a></p>
+            <p><a id="reportBug" href="https://github.com/ja-weiss/ja-weiss.github.io/issues/new" target="_blank">Report Bug</a></p>
             <p>&copy; 2025 Jacob Weiß</p>
         </footer>
     </div>
