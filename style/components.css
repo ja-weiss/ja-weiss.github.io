@@ -152,7 +152,7 @@
     cursor: pointer;
     border-radius: 5px;
     transition: all 0.1s ease;
-    z-index: 1;
+    
 } .button3:hover {
     background-color: #ffe900;
     transform: scale(1.1);
@@ -173,6 +173,7 @@
     overflow: hidden;
     transition: background 0.6s ease, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
 
 /* ✨ Glanz-Effekt */
@@ -245,6 +246,7 @@
     width: 80px;
     height: 40px;
     transform: translateY(-75px); /* Vertikale Positionierung */
+    z-index: -1;
 }
 
 /* Das eigentliche Checkbox-Element ausblenden */
