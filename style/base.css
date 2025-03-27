@@ -19,7 +19,7 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     height: 100vh;      /* Deckt den gesamten Viewport ab */
-    z-index: -2;        /* Setzt das Video hinter den Inhalt */
+    z-index: -999;        /* Setzt das Video hinter den Inhalt */
     overflow: hidden;
 
   } #videoBackground {

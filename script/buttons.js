@@ -17,11 +17,14 @@ function closeAlert() {
 /* Button 3 */
 document.querySelector(".button3").addEventListener("click", function() {
     const button = document.querySelector(".button3");
-    button.style.transition = "transform 2s ease-in-out"; // Animation für den Button
     button.style.transform = "scale(50.0)"; // Vergrößert den Button
+    button.style.zIndex = "1"
 
     setTimeout(() => {
         button.style.transform = "scale(1)"; // Verkleinert den Button wieder
+        setTimeout(() => {
+            button.style.zIndex = ""; // Setzt den zIndex zurück
+        }, 2000); // Zeit bis der Button wieder hinter dem anderen Element ist
     }, 2000);
 });
 
