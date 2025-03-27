@@ -152,6 +152,7 @@
     cursor: pointer;
     border-radius: 5px;
     transition: all 0.1s ease;
+    z-index: 1;
 } .button3:hover {
     background-color: #ffe900;
     transform: scale(1.1);
