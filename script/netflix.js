@@ -1,7 +1,8 @@
+/* Open Netflix Button */
 function startNetflix() {
-    let overlay = document.getElementById("overlay");
-    let video = document.getElementById("intro-video");
-    let wrapper = document.querySelector(".wrapper"); // Der gesamte Inhalt
+    let overlay = document.getElementById("netflixStartUp");
+    let video = document.getElementById("netflixIntro");
+    let wrapper = document.querySelector(".defaultPage-wrapper1"); // Der gesamte Inhalt
     let netflix = document.getElementById("netflix");
 
     setTimeout(function() {
@@ -27,8 +28,7 @@ function startNetflix() {
     
     };
 
-
-/* Netflix Button */
+/* Netflix Button click effect */
 document.querySelector("#openNetflix").addEventListener("click", function() {
     const button = document.querySelector("#openNetflix");
 

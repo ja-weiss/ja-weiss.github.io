@@ -32,13 +32,28 @@ body::-webkit-scrollbar {
 }
 
 /* Wrapper */
-.wrapper {
+.defaultPage-wrapper1 {
     display: flex;      /* Flexbox aktivieren */
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;  /* Elemente werden vertikal gestapelt */
     min-height: 100vh;   /* Die Höhe der Wrapper ist mindestens so hoch wie der Viewport */
   }
+
+.defaultPage-wrapper2 {
+    display: flex;      /* Flexbox aktivieren */
+    justify-content: space-between;
+    width: 50%;
+    flex-direction: row;
+    gap: 25px;
+}
+@media only screen and (max-width: 768px) {
+    .defaultPage-wrapper2 {
+        flex-direction: column; /* Bei kleinen Bildschirmen werden die Elemente vertikal gestapelt */
+        width: 100%;
+    }
+}
 
 /* Header */
 header {
