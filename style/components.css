@@ -152,7 +152,7 @@ main {
 
 /* Der Wrapper für den Schalter */
 .vbgSwitch {
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 10px;
     display: inline-flex;
