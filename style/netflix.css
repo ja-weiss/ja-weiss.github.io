@@ -33,6 +33,9 @@
         transform: scale(10);
     }
 }
+#openNetflix:hover {
+    outline: none;
+}
 
 /* Netflix Startup video */
 .netflixStartUp {

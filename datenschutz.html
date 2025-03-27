@@ -25,27 +25,27 @@
             font-weight: bold;
         }
         .button {
-            display: inline-block;
-            background-color: #ff4757;
-            color: white;
+            margin-top: 50px;
             padding: 10px 20px;
-            font-size: 18px;
-            border-radius: 5px;
-            transition: all 0.1s;
-            transform: translateY(50px);
-        }
-
-        .button:hover {
+            background-color: red;
+            color: white;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        } .button:hover {
+            transform: translateY(-4px) rotate(5deg);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
             background-color: green;
+        } .button:active {
+            background-color: lime;
+            color: black;
         }
     </style>
 </head>
-<body>
-    <h1>Datenschutzerklärung</h1>
-    <p>Mit dem Nutzen dieser Website erklärst du dich bereit, <span class="highlight">all deine Organe</span> zu verkaufen.</p>
-    <p></p>
-    <button class="button" onclick="setTimeout(() => window.location.href='index.html', 100)">Ich stimme zu</button>
-
-
-</body>
+    <body>
+        <h1>Datenschutzerklärung</h1>
+        <p>Mit dem Nutzen dieser Website erklärst du dich bereit, <span class="highlight">all deine Organe</span> zu verkaufen.</p>
+        <button class="button" onclick="setTimeout(() => window.location.href='index.html', 100)">Ich stimme zu</button>
+    </body>
 </html>
