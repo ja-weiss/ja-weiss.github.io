@@ -41,7 +41,7 @@
 
 /* Hauptinhalt */
 main {
-    margin: 10px auto;
+    margin: auto;
     background: rgb(255, 255, 255, 0.25);
     color: white;
     min-width: 200px;
