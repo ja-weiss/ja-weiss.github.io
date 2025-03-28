@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Verbindungstyp (Wi-Fi, Mobilnetz)
     if (navigator.connection) {
-        document.getElementById('connection-type').textContent = navigator.connection.type;
+        document.getElementById('connection-type').textContent = navigator.connection.effectiveType || "Nicht verfügbar";
     } else {
         document.getElementById('connection-type').textContent = "Nicht verfügbar";
     }
@@ -92,6 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (navigator.storage && navigator.storage.estimate) {
         navigator.storage.estimate().then(function(estimate) {
             document.getElementById('storage-status').textContent = `Verfügbar: ${estimate.quota - estimate.usage} Bytes`;
+        }).catch(() => {
+            document.getElementById('storage-status').textContent = "Speicherstatus konnte nicht ermittelt werden";
         });
     } else {
         document.getElementById('storage-status').textContent = "Nicht verfügbar";
@@ -119,6 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (navigator.getBattery) {
         navigator.getBattery().then(function(battery) {
             document.getElementById('battery-status').textContent = `Level: ${battery.level * 100}% | Ladezustand: ${battery.charging ? "Lädt" : "Nicht ladend"}`;
+        }).catch(() => {
+            document.getElementById('battery-status').textContent = "Batteriestatus konnte nicht ermittelt werden";
         });
     } else {
         document.getElementById('battery-status').textContent = "Nicht verfügbar";
