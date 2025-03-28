@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const language = navigator.language;
     const resolution = `${window.screen.width}x${window.screen.height}`;
 
-    // Geolocation
+    // Geolocation: Browser-based
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             const lat = position.coords.latitude;
@@ -13,12 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Zeige Koordinaten an
             document.getElementById('coordinates').textContent = `${lat}, ${lon}`;
+        }, function() {
+            document.getElementById('coordinates').textContent = 'Geolocation konnte nicht ermittelt werden';
         });
     } else {
         document.getElementById('coordinates').textContent = 'Geolocation nicht unterstützt';
     }
 
-    // IP-Adresse und Geolokalisierung via API
+    // IP-Adresse und Geolokalisierung via API (ipinfo.io)
     fetch('https://ipinfo.io/json?token=YOUR_API_KEY') // API-Key von ipinfo.io einfügen
         .then(response => response.json())
         .then(data => {
