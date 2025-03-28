@@ -13,6 +13,20 @@
         <p>Diese Seite zeigt alle verfügbaren Informationen über dich, die auf dieser Website gesammelt werden können.</p>
     </header>
     <div class="content">
+        <h2>Website</h2>
+        <ul>
+            <li><strong>Aktuelle Seite:</strong> <span id="page-visited"></span></li>
+            <li><strong>Verweildauer:</strong> <span id="time-spent"></span></li>
+            <li><strong>Letzter Klick (x, y):</strong> <span id="last-click"></span></li>
+            <li><strong>Letzte Seite:</strong> <span id="referrer"></span></li>
+        </ul>
+        <h2>Geolokalisierung</h2>
+        <ul>
+            <li><strong>Land:</strong> <span id="country"></span></li>
+            <li><strong>Stadt:</strong> <span id="city"></span></li>
+            <li><strong>Region:</strong> <span id="region"></span></li>
+            <li><strong>Koordinaten (Benötigt Standort-Berechtigung):</strong> <span id="coordinates"></span></li>
+        </ul>
         <h2>Geräteinformationen</h2>
         <h3>Verbindung</h3>
         <ul>
@@ -23,7 +37,7 @@
         <ul>
             <li><strong>Browser:</strong> <span id="browser"></span></li>
             <li><strong>Auflösung:</strong> <span id="resolution"></span></li>
-            <li><strong>Verwendete Plugins:</strong> <span id="plugins"></span></li>
+            <li><strong>Plugins:</strong> <span id="plugins"></span></li>
         </ul>
         <h3>System</h3>
         <ul>
@@ -37,21 +51,9 @@
             <li><strong>Maximale Multitouch-Punkte:</strong> <span id="max-touchpoints"></span></li>      
         </ul>
 
-        <h2>Geolokalisierung</h2>
-        <ul>
-            <li><strong>Land:</strong> <span id="country"></span></li>
-            <li><strong>Stadt:</strong> <span id="city"></span></li>
-            <li><strong>Region:</strong> <span id="region"></span></li>
-            <li><strong>Koordinaten (Benötigt Standort-Berechtigung):</strong> <span id="coordinates"></span></li>
-        </ul>
 
-        <h2>Interaktionen</h2>
-        <ul>
-            <li><strong>Seitenbesuch:</strong> <span id="page-visited"></span></li>
-            <li><strong>Verweildauer:</strong> <span id="time-spent"></span></li>
-            <li><strong>Koordinaten letzter Klick:</strong> <span id="last-click"></span></li>
-            <li><strong>Letzte Seite:</strong> <span id="referrer"></span></li>
-        </ul>
+
+
 
         <footer>
             <p>Alle Daten werden nur zu Demonstrationszwecken gesammelt und nicht gespeichert.</p>
