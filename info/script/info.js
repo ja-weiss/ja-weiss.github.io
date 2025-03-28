@@ -71,4 +71,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Anzeige der originalen Referrer-Seite
     document.getElementById('original-referrer').textContent = localStorage.getItem('original_referrer') || 'Kein Referrer verfügbar';
+
+    // Verbindungstyp (Wi-Fi, Mobilnetz)
+    if (navigator.connection) {
+        document.getElementById('connection-type').textContent = navigator.connection.type;
+    } else {
+        document.getElementById('connection-type').textContent = "Nicht verfügbar";
+    }
+
+    // Maximale Anzahl von Touchpunkten
+    document.getElementById('max-touchpoints').textContent = navigator.maxTouchPoints || "Nicht verfügbar";
+
+    // Gerätespeicher (z. B. 4 GB)
+    document.getElementById('device-memory').textContent = navigator.deviceMemory || "Nicht verfügbar";
+
+    // CPU-Kerne
+    document.getElementById('cpu-cores').textContent = navigator.hardwareConcurrency || "Nicht verfügbar";
+
+    // Speicherstatus
+    if (navigator.storage && navigator.storage.estimate) {
+        navigator.storage.estimate().then(function(estimate) {
+            document.getElementById('storage-status').textContent = `Verfügbar: ${estimate.quota - estimate.usage} Bytes`;
+        });
+    } else {
+        document.getElementById('storage-status').textContent = "Nicht verfügbar";
+    }
+
+    // Verwendete Plugins
+    let pluginsList = "";
+    if (navigator.plugins) {
+        for (let i = 0; i < navigator.plugins.length; i++) {
+            pluginsList += navigator.plugins[i].name + " ";
+        }
+        document.getElementById('plugins').textContent = pluginsList || "Keine Plugins gefunden";
+    } else {
+        document.getElementById('plugins').textContent = "Nicht verfügbar";
+    }
+
+    // Bildschirmorientierung
+    if (window.screen.orientation) {
+        document.getElementById('screen-orientation').textContent = window.screen.orientation.type;
+    } else {
+        document.getElementById('screen-orientation').textContent = "Nicht verfügbar";
+    }
+
+    // Batteriestatus
+    if (navigator.getBattery) {
+        navigator.getBattery().then(function(battery) {
+            document.getElementById('battery-status').textContent = `Level: ${battery.level * 100}% | Ladezustand: ${battery.charging ? "Lädt" : "Nicht ladend"}`;
+        });
+    } else {
+        document.getElementById('battery-status').textContent = "Nicht verfügbar";
+    }
 });
