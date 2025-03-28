@@ -88,6 +88,7 @@
     cursor: pointer;
     border-radius: 5px;
     display: block;
+    pointer-events: auto;
 } .button1:hover {
     background-color: #ff0000;
 } .button1placeholder {

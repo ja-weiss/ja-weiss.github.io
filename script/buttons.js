@@ -35,5 +35,8 @@ document.querySelectorAll(".button4").forEach((button) => {
         const y = e.clientY - rect.top;
         button.style.setProperty("--glow-x", `${x}px`);
         button.style.setProperty("--glow-y", `${y}px`);
+        setTimeout(() => {
+            window.location.href = "timetravel/timetravel.html"; // Leitet nach 1 Sekunde weiter
+        }, 1000);
     });
 });
