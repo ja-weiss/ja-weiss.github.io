@@ -69,15 +69,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (connectionType === 'wifi') {
             document.getElementById('connection-type').textContent = "WLAN";
         } else if (connectionType === '5g') {
-            document.getElementById('connection-type').textContent = "Mobilnetz (5G)";
+            document.getElementById('connection-type').textContent = "5G";
         } else if (connectionType === '4g') {
-            document.getElementById('connection-type').textContent = "Mobilnetz (4G)";
+            document.getElementById('connection-type').textContent = "4G";
         } else if (connectionType === '3g') {
-            document.getElementById('connection-type').textContent = "Mobilnetz (3G)";
+            document.getElementById('connection-type').textContent = "3G";
         } else if (connectionType === '2g') {
-            document.getElementById('connection-type').textContent = "Mobilnetz (2G)";
+            document.getElementById('connection-type').textContent = "2G";
         } else if (connectionType === 'slow-2g') {
-            document.getElementById('connection-type').textContent = "Sehr langsames Mobilnetz (2G)";
+            document.getElementById('connection-type').textContent = "Langsames 2G";
         } else {
             document.getElementById('connection-type').textContent = "Unbekannter Netzwerktyp";
         }
