@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // IP-Adresse und Geolokalisierung via API (ipinfo.io)
-    fetch('https://ipinfo.io/json?token=YOUR_API_KEY') // API-Key von ipinfo.io einfügen
+    fetch('https://ipinfo.io/json?token=YOUR_API_KEY') // Ersetze 'YOUR_API_KEY' mit deinem echten API-Key von ipinfo.io
         .then(response => response.json())
         .then(data => {
             document.getElementById('ip').textContent = data.ip;
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Referrer - Verwendet document.referrer und prüft die Bedingungen
-    const referrer = document.referrer || "Die Website wurde direkt aufgerufen oder der Referrer wurde blockiert.";
+    const referrer = document.referrer || "Kein Referrer verfügbar";
 
     // Display Information
     document.getElementById('browser').textContent = browser;
@@ -63,4 +63,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Anzeige des Referrers
     document.getElementById('referrer').textContent = referrer;
+
+    // Setze die Ursprungsseite im localStorage
+    if (!localStorage.getItem('original_referrer')) {
+        localStorage.setItem('original_referrer', document.referrer);
+    }
+
+    // Anzeige der originalen Referrer-Seite
+    document.getElementById('original-referrer').textContent = localStorage.getItem('original_referrer') || 'Kein Referrer verfügbar';
 });
