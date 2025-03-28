@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+    <link rel="stylesheet" href="info/style/info.css">
+    <script src="info/script/info.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Benutzerinformationen</h1>
+        <p>Diese Seite zeigt alle verfügbaren Informationen über dich, die auf dieser Website gesammelt werden können.</p>
+    </header>
+    <div class="content">
+        <h2>Geräteinformationen</h2>
+        <h3>Verbindung</h3>
+        <ul>
+            <li><strong>IP-Adresse:</strong> <span id="ip"></span></li>
+            <li><strong>Verbindungsart:</strong> <span id="connection-type"></span></li>
+        </ul>
+        <h3>Browser</h3>
+        <ul>
+            <li><strong>Browser:</strong> <span id="browser"></span></li>
+            <li><strong>Auflösung:</strong> <span id="resolution"></span></li>
+            <li><strong>Verwendete Plugins:</strong> <span id="plugins"></span></li>
+        </ul>
+        <h3>System</h3>
+        <ul>
+            <li><strong>Betriebssystem:</strong> <span id="os"></span></li>
+            <li><strong>Spracheinstellung:</strong> <span id="language"></span></li>
+            <li><strong>Batteriestatus:</strong> <span id="battery-status"></span></li>
+            <li><strong>CPU-Kerne:</strong> <span id="cpu-cores"></span></li>
+            <li><strong>RAM:</strong> <span id="device-memory"></span></li>
+            <li><strong>Speicherstatus:</strong> <span id="storage-status"></span></li>
+            <li><strong>Bildschirmorientierung:</strong> <span id="screen-orientation"></span></li>
+            <li><strong>Maximale Multitouch-Punkte:</strong> <span id="max-touchpoints"></span></li>      
+        </ul>
+
+        <h2>Geolokalisierung</h2>
+        <ul>
+            <li><strong>Land:</strong> <span id="country"></span></li>
+            <li><strong>Stadt:</strong> <span id="city"></span></li>
+            <li><strong>Region:</strong> <span id="region"></span></li>
+            <li><strong>Koordinaten (Benötigt Standort-Berechtigung):</strong> <span id="coordinates"></span></li>
+        </ul>
+
+        <h2>Interaktionen</h2>
+        <ul>
+            <li><strong>Seitenbesuch:</strong> <span id="page-visited"></span></li>
+            <li><strong>Verweildauer:</strong> <span id="time-spent"></span></li>
+            <li><strong>Koordinaten letzter Klick:</strong> <span id="last-click"></span></li>
+            <li><strong>Letzte Seite:</strong> <span id="referrer"></span></li>
+        </ul>
+
+        <footer>
+            <p>Alle Daten werden nur zu Demonstrationszwecken gesammelt und nicht gespeichert.</p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Referrer - Verwendet document.referrer und prüft die Bedingungen
-    const referrer = document.referrer || "Kein Referrer verfügbar";
+    const referrer = document.referrer || "Die Website wurde direkt aufgerufen oder der Referrer wurde blockiert.";
     document.getElementById('referrer').textContent = referrer;
 
     // Anzeige der aktuellen URL
@@ -60,18 +60,30 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('last-click').textContent = lastClick;
     });
 
+
     // Verbindungstyp (Wi-Fi, Mobilnetz)
     if (navigator.connection) {
-        document.getElementById('connection-type').textContent = navigator.connection.effectiveType || "Nicht verfügbar";
+        const connectionType = navigator.connection.effectiveType;
+        
+        // Verwende eine erweiterte Fallbehandlung
+        if (navigator.connection.type === 'wifi') {
+            document.getElementById('connection-type').textContent = "WLAN";
+        } else if (connectionType === "4G" || connectionType === "3G" || connectionType === "2G") {
+            document.getElementById('connection-type').textContent = "Mobilnetz (geschätzter Netzwerktyp: " + connectionType + ")";
+        } else {
+            document.getElementById('connection-type').textContent = "Unbekannter Netzwerktyp";
+        }
     } else {
         document.getElementById('connection-type').textContent = "Nicht verfügbar";
     }
+    
+
 
     // Maximale Anzahl von Touchpunkten
     document.getElementById('max-touchpoints').textContent = navigator.maxTouchPoints || "Nicht verfügbar";
 
     // Gerätespeicher (z. B. 4 GB)
-    document.getElementById('device-memory').textContent = navigator.deviceMemory || "Nicht verfügbar";
+    document.getElementById('device-memory').textContent = navigator.deviceMemory + " GB" || "Nicht verfügbar";
 
     // CPU-Kerne
     document.getElementById('cpu-cores').textContent = navigator.hardwareConcurrency || "Nicht verfügbar";
