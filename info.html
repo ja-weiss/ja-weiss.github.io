@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Info</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="info/style/info.css">
     <script src="info/script/info.js"></script>
 </head>
@@ -15,51 +16,44 @@
     <div class="content">
         <h2>Website</h2>
         <ul>
-            <li><strong>Aktuelle Seite:</strong> <span id="page-visited"></span></li>
-            <li><strong>Verweildauer:</strong> <span id="time-spent"></span></li>
-            <li><strong>Letzter Klick (x, y):</strong> <span id="last-click"></span></li>
-            <li><strong>Letzte Seite:</strong> <span id="referrer"></span></li>
+            <li><strong>Aktuelle Seite:</strong> <span id="page-visited"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die URL der aktuellen Seite.</span></span></li>
+            <li><strong>Verweildauer:</strong> <span id="time-spent"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die verbrachte Zeit auf der Website seit dem letzten Laden.</span></span></li>
+            <li><strong>Letzter Klick (x, y):</strong> <span id="last-click"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Koordinaten des letzten Klicks (x, y) auf der Seite. Leer, falls seit dem Laden der Seite noch kein Klick ausgeführt wurde.</span></span></li>
+            <li><strong>Letzte Seite:</strong> <span id="referrer"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die URL der Seite, über die diese Seite aufgerufen wurde, falls eine Weiterleitung stattgefunden hat.</span></span></li>
         </ul>
         <h2>Geolokalisierung</h2>
         <ul>
-            <li><strong>Land:</strong> <span id="country"></span></li>
-            <li><strong>Stadt:</strong> <span id="city"></span></li>
-            <li><strong>Region:</strong> <span id="region"></span></li>
-            <li><strong>Koordinaten (Benötigt Standort-Berechtigung):</strong> <span id="coordinates"></span></li>
+            <li><strong>Land:</strong> <span id="country"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Das Land, über das die Seite aufgerufen wird. (Funktioniert ohne Standort-Berechtigung)</span></span></li>
+            <li><strong>Stadt:</strong> <span id="city"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Stadt, über die die Seite aufgerufen wird. (Funktioniert ohne Standort-Berechtigung)</span></span></li>
+            <li><strong>Region:</strong> <span id="region"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Region (Bundesland oder Provinz), über die die Seite aufgerufen wird. (Funktioniert ohne Standort-Berechtigung)</span></span></li>
+            <li><strong>Koordinaten (Benötigt Standort-Berechtigung):</strong> <span id="coordinates"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die geografischen Koordinaten (Breiten- und Längengrad) des Gerätestandorts, falls die Standort-Berechtigung erteilt wurde.</span></span></li>
         </ul>
         <h2>Geräteinformationen</h2>
         <h3>Verbindung</h3>
         <ul>
-            <li><strong>IP-Adresse:</strong> <span id="ip"></span></li>
-            <li><strong>Vermutete Verbindungsart:</strong> <span id="connection-type"></span></li>
+            <li><strong>IP-Adresse:</strong> <span id="ip"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die IP-Adresse des Geräts.</span></span></li>
+            <li><strong>Vermutete Verbindungsart:</strong> <span id="connection-type"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Art der Netzwerkverbindung kann aufgrund der Netzwerkinfrastruktur des Geräts (z.B. Hybridnetzwerk, also Mobilfunk- und WLAN-Unterstützung) eventuell nicht die tatsächliche Verbindung anzeigen.</span></span></li>
         </ul>
         <h3>Browser</h3>
         <ul>
-            <li><strong>Browser:</strong> <span id="browser"></span></li>
-            <li><strong>Auflösung:</strong> <span id="resolution"></span></li>
-            <li><strong>Plugins:</strong> <span id="plugins"></span></li>
+            <li><strong>Browser:</strong> <span id="browser"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Abwärtskompatibilität (Betriebssystem; Architektur) Rendering Engine (Kompatibilität) Browsername Rendering-Engine</span></span></li>
+            <li><strong>Auflösung:</strong> <span id="resolution"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Auflösung des Browserfensters (Breite x Höhe in Pixeln).</span></span></li>
+            <li><strong>Plugins:</strong> <span id="plugins"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">System-Plugins (keine Browser Add-Ons)</span></span></li>
         </ul>
         <h3>System</h3>
         <ul>
-            <li><strong>Betriebssystem:</strong> <span id="os"></span></li>
-            <li><strong>Spracheinstellung:</strong> <span id="language"></span></li>
-            <li><strong>Batteriestatus:</strong> <span id="battery-status"></span></li>
-            <li><strong>CPU-Kerne:</strong> <span id="cpu-cores"></span></li>
-            <li><strong>RAM:</strong> <span id="device-memory"></span></li>
-            <li><strong>Speicherstatus:</strong> <span id="storage-status"></span></li>
-            <li><strong>Bildschirmorientierung:</strong> <span id="screen-orientation"></span></li>
-            <li><strong>Maximale Multitouch-Punkte:</strong> <span id="max-touchpoints"></span></li>      
+            <li><strong>Betriebssystem:</strong> <span id="os"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Das Betriebssystem des Geräts.</span></span></li>
+            <li><strong>Spracheinstellung:</strong> <span id="language"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Sprache, die im Browser oder Betriebssystem eingestellt ist.</span></span></li>
+            <li><strong>Batteriestatus:</strong> <span id="battery-status"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Der aktuelle Akku- und Ladezustand des Geräts.</span></span></li>
+            <li><strong>CPU-Kerne:</strong> <span id="cpu-cores"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Anzahl der Kerne der CPU (Prozessor) des Geräts.</span></span></li>
+            <li><strong>RAM:</strong> <span id="device-memory"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Der installierte RAM (Arbeitsspeicher) des Geräts.</span></span></li>
+            <li><strong>Speicherstatus:</strong> <span id="storage-status"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Der verfügbare Speicherplatz auf dem Gerät.</span></span></li>
+            <li><strong>Bildschirmorientierung:</strong> <span id="screen-orientation"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die aktuelle Ausrichtung des Bildschirms (Hochformat oder Querformat).</span></span></li>
+            <li><strong>Maximale Multitouch-Punkte:</strong> <span id="max-touchpoints"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die maximale Anzahl gleichzeitiger Touch-Eingaben, die das Display des Geräts unterstützt.</span></span></li>      
         </ul>
-
-
-
-
-
         <footer>
             <p>Alle Daten werden nur zu Demonstrationszwecken gesammelt und nicht gespeichert.</p>
         </footer>
     </div>
-
-    
 </body>
 </html>
