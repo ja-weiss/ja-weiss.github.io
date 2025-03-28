@@ -11,15 +11,28 @@ document.addEventListener('DOMContentLoaded', function() {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
 
-            // Call to external API to get country and city (example)
-            fetch(`https://geocode.xyz/${lat},${lon}?json=1`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('country').textContent = data.country;
-                    document.getElementById('city').textContent = data.city;
-                });
+            // Zeige Koordinaten an
+            document.getElementById('coordinates').textContent = `${lat}, ${lon}`;
         });
+    } else {
+        document.getElementById('coordinates').textContent = 'Geolocation nicht unterstützt';
     }
+
+    // IP-Adresse und Geolokalisierung via API
+    fetch('https://ipinfo.io/json?token=YOUR_API_KEY') // API-Key von ipinfo.io einfügen
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('ip').textContent = data.ip;
+            document.getElementById('country').textContent = data.country;
+            document.getElementById('region').textContent = data.region;
+            document.getElementById('city').textContent = data.city;
+        })
+        .catch(error => {
+            document.getElementById('ip').textContent = 'IP-Adresse konnte nicht ermittelt werden';
+            document.getElementById('country').textContent = 'Land konnte nicht ermittelt werden';
+            document.getElementById('region').textContent = 'Region konnte nicht ermittelt werden';
+            document.getElementById('city').textContent = 'Stadt konnte nicht ermittelt werden';
+        });
 
     // Referrer (previous page)
     const referrer = document.referrer || "Kein Referrer";
@@ -29,8 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('os').textContent = os;
     document.getElementById('language').textContent = language;
     document.getElementById('resolution').textContent = resolution;
-    document.getElementById('ip').textContent = "IP-Adresse wird hier angezeigt, falls verfügbar.";
-    document.getElementById('referrer').textContent = referrer;
 
     // Track Time on Page
     let timeSpent = 0;
