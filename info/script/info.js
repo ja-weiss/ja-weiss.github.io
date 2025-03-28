@@ -64,18 +64,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Verbindungstyp (Wi-Fi, Mobilnetz)
     if (navigator.connection) {
         const connectionType = navigator.connection.effectiveType;
-        
-        // Verwende eine erweiterte Fallbehandlung
-        if (navigator.connection.type === 'wifi') {
+    
+        // Verwende 'effectiveType' für den Verbindungsstatus
+        if (connectionType === 'wifi') {
             document.getElementById('connection-type').textContent = "WLAN";
-        } else if (connectionType === "4G" || connectionType === "3G" || connectionType === "2G") {
-            document.getElementById('connection-type').textContent = "Mobilnetz (geschätzter Netzwerktyp: " + connectionType + ")";
+        } else if (connectionType === '4g') {
+            document.getElementById('connection-type').textContent = "4G";
+        } else if (connectionType === '3g') {
+            document.getElementById('connection-type').textContent = "3G";
+        } else if (connectionType === '2g') {
+            document.getElementById('connection-type').textContent = "2G";
+        } else if (connectionType === 'slow-2g') {
+            document.getElementById('connection-type').textContent = "2G (Langsam)";
         } else {
             document.getElementById('connection-type').textContent = "Unbekannter Netzwerktyp";
         }
     } else {
-        document.getElementById('connection-type').textContent = "Nicht verfügbar";
+        document.getElementById('connection-type').textContent = "Verbindungsinformationen nicht verfügbar";
     }
+    
     
 
 
