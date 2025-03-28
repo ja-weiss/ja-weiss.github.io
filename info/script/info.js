@@ -5,13 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const language = navigator.language;
     const resolution = `${window.screen.width}x${window.screen.height}`;
 
+    // Zeige Browser-Informationen an
+    document.getElementById('browser').textContent = browser;
+    document.getElementById('os').textContent = os;
+    document.getElementById('language').textContent = language;
+    document.getElementById('resolution').textContent = resolution;
+
     // Geolocation: Browser-based
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
-
-            // Zeige Koordinaten an
             document.getElementById('coordinates').textContent = `${lat}, ${lon}`;
         }, function() {
             document.getElementById('coordinates').textContent = 'Geolocation konnte nicht ermittelt werden';
@@ -38,12 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Referrer - Verwendet document.referrer und prüft die Bedingungen
     const referrer = document.referrer || "Kein Referrer verfügbar";
+    document.getElementById('referrer').textContent = referrer;
 
-    // Display Information
-    document.getElementById('browser').textContent = browser;
-    document.getElementById('os').textContent = os;
-    document.getElementById('language').textContent = language;
-    document.getElementById('resolution').textContent = resolution;
+    // Anzeige der aktuellen URL
+    document.getElementById('page-visited').textContent = window.location.href;
 
     // Track Time on Page
     let timeSpent = 0;
@@ -52,25 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('time-spent').textContent = `${timeSpent} Sekunden`;
     }, 1000);
 
-    // Track Page Visit
-    document.getElementById('page-visited').textContent = window.location.href;
-
     // Track Last Click
     document.body.addEventListener('click', function(event) {
         const lastClick = `${event.clientX}, ${event.clientY}`;
         document.getElementById('last-click').textContent = lastClick;
     });
-
-    // Anzeige des Referrers
-    document.getElementById('referrer').textContent = referrer;
-
-    // Setze die Ursprungsseite im localStorage
-    if (!localStorage.getItem('original_referrer')) {
-        localStorage.setItem('original_referrer', document.referrer);
-    }
-
-    // Anzeige der originalen Referrer-Seite
-    document.getElementById('original-referrer').textContent = localStorage.getItem('original_referrer') || 'Kein Referrer verfügbar';
 
     // Verbindungstyp (Wi-Fi, Mobilnetz)
     if (navigator.connection) {
