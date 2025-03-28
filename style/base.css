@@ -1,3 +1,7 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 /* Allgemeine Stile */
 body, html {
     font-family: Arial, sans-serif;
