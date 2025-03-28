@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // IP-Adresse und Geolokalisierung via API (ipinfo.io)
-    fetch('https://ipinfo.io/json?token=YOUR_API_KEY') // API-Key von ipinfo.io einfügen
+    fetch('https://ipinfo.io/json?token=5966cf8eb55b01') // API-Key von ipinfo.io einfügen
         .then(response => response.json())
         .then(data => {
             document.getElementById('ip').textContent = data.ip;
