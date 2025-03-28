@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // IP-Adresse und Geolokalisierung via API (ipinfo.io)
-    fetch('https://ipinfo.io/json?token=5966cf8eb55b01') // API-Key von ipinfo.io einfügen
+    fetch('https://ipinfo.io/json?token=YOUR_API_KEY') // API-Key von ipinfo.io einfügen
         .then(response => response.json())
         .then(data => {
             document.getElementById('ip').textContent = data.ip;
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('city').textContent = 'Stadt konnte nicht ermittelt werden';
         });
 
-    // Referrer (previous page)
-    const referrer = document.referrer || "Kein Referrer";
+    // Referrer - Verwendet document.referrer und prüft die Bedingungen
+    const referrer = document.referrer || "Die Website wurde direkt aufgerufen oder der Referrer wurde blockiert.";
 
     // Display Information
     document.getElementById('browser').textContent = browser;
@@ -60,4 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const lastClick = `${event.clientX}, ${event.clientY}`;
         document.getElementById('last-click').textContent = lastClick;
     });
+
+    // Anzeige des Referrers
+    document.getElementById('referrer').textContent = referrer;
 });
