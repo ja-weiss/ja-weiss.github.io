@@ -3,7 +3,8 @@ const redirects = {
     "/youtube": "https://youtube.com/@pixelbeastt",
     "/instagram": "https://instagram.com/jac_ob_w",
     "/naturtheater": "https://www.naturtheater.de/",
-    "/lukasplitz": "https://www.google.com/search?q=idiot"
+    "/lukasplitz": "https://www.google.com/search?q=idiot",
+    "/secret": "https://youtu.be/dQw4w9WgXcQ",
   };
 
   const path = window.location.pathname;
