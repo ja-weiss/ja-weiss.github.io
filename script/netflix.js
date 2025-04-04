@@ -35,6 +35,8 @@ function startNetflix() {
             gsap.to("body", {  duration: 0, onComplete: () => {
                 window.location.href = "netflix.html";
                 }});
+            
+                overlay.style.visibility = "hidden";
 
     } }, 100);
     
