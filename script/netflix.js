@@ -36,7 +36,6 @@ function startNetflix() {
                 window.location.href = "netflix.html";
                 }});
             
-                overlay.style.visibility = "hidden";
 
     } }, 100);
     
