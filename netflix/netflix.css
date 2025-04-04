@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "netflix-font";
+    src: url("../fonts/BebasNeue.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "netflix-font", sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #000000;
+    color: red;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} body * {
+    animation: popUp 1s ease-in-out forwards;
+  }
+
+@keyframes popUp {
+    0% {
+      opacity: 0;
+      transform: scale(0.1);
+    }
+    85% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
