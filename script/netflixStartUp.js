@@ -6,11 +6,11 @@ function startNetflix() {
     let netflix = document.getElementById("netflix");
     let button = document.getElementById("openNetflix");
 
-        // Lädt die neue Seite bereits im Hintergrund
-        let iframe = document.createElement("iframe");
-        iframe.src = "netflix.html";  // Lade die Seite im Hintergrund
-        iframe.style.display = "none";  // Unsichtbar, nur zum Laden
-        document.body.appendChild(iframe);  // Füge das iframe in den DOM ein
+    // Lädt die neue Seite bereits im Hintergrund
+    let iframe = document.createElement("iframe");
+    iframe.src = "netflix.html";  // Lade die Seite im Hintergrund
+    iframe.style.display = "none";  // Unsichtbar, nur zum Laden
+    document.body.appendChild(iframe);  // Füge das iframe in den DOM ein
 
     setTimeout(function() {
         // Netflix-Overlay aktivieren
@@ -18,27 +18,15 @@ function startNetflix() {
         overlay.style.visibility = "visible";
         overlay.style.opacity = "1";
 
-
         // Video starten
         video.play();
 
         // Nach dem Video den neuen Inhalt zeigen
         video.onended = function() {
-            /* Wrapper (alte Inhalte) verstecken
-            wrapper.style.display = "none";
-            overlay.style.visibillity = "hidden"; // Video ausblenden
-            netflix.style.display = "flex"; // Neuen Inhalt anzeigen
-
-            // Hier könnte man eine Animation hinzufügen, wenn der neue Inhalt erscheint
-            netflix.classList.add("show"); */
-
-            gsap.to("body", {  duration: 0, onComplete: () => {
-                window.location.href = "netflix.html";
-                }});
+            window.location.href = "netflix.html";
             setTimeout(() => {
                 overlay.style.opacity = "0"; // Overlay ausblenden
                 overlay.style.visibility = "hidden"; // Overlay unsichtbar machen
-                
             }, 1000);
 
     } }, 100);

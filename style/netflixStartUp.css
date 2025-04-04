@@ -60,32 +60,3 @@
     height: 100%;
     object-fit: cover;
 }
-
-/* Neuer Inhalt nach dem Intro */
-.netflix {
-    display: none;
-    text-align: center;
-    color: white;
-    background-color: black;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-} .netflix * {
-    animation: popUp 1s ease-in-out forwards;
-  }
-
-@keyframes popUp {
-    0% {
-      opacity: 0;
-      transform: scale(0.1);
-    }
-    85% {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
