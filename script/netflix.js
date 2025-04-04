@@ -26,7 +26,7 @@ function startNetflix() {
         video.onended = function() {
             /* Wrapper (alte Inhalte) verstecken
             wrapper.style.display = "none";
-            overlay.style.display = "none"; // Video ausblenden
+            overlay.style.visibillity = "hidden"; // Video ausblenden
             netflix.style.display = "flex"; // Neuen Inhalt anzeigen
 
             // Hier könnte man eine Animation hinzufügen, wenn der neue Inhalt erscheint
@@ -35,7 +35,11 @@ function startNetflix() {
             gsap.to("body", {  duration: 0, onComplete: () => {
                 window.location.href = "netflix.html";
                 }});
-            
+            setTimeout(() => {
+                overlay.style.opacity = "0"; // Overlay ausblenden
+                overlay.style.visibility = "hidden"; // Overlay unsichtbar machen
+                
+            }, 1000);
 
     } }, 100);
     
