@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="style/base.css">
+  <link rel="stylesheet" href="login/style/base.css">
   <script defer src="login/script/login.js"></script>
 </head>
 <body>
   <div class="login-container">
     <h2>Login</h2>
-    <input type="text" id="username" placeholder="Benutzername" />
-    <input type="password" id="password" placeholder="Passwort" />
-    <button onclick="checkLogin()">Login</button>
-    <p id="error" style="color:red;"></p>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Benutzername" required />
+      <input type="password" id="password" placeholder="Passwort" required />
+      <button type="submit">Login</button>
+      <p id="error"></p>
+    </form>
   </div>
 </body>
 </html>

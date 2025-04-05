@@ -1,1 +1,26 @@
-<h1>Access granted</h1>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Access</title>
+  <link rel="stylesheet" href="style/access.css">
+  <script defer src="script/access.js"></script>
+</head>
+<body>
+  <h1>Willkommen, <span id="user-name"></span>!</h1>
+  <p>Sie haben sich erfolgreich eingeloggt.</p>
+
+  <!-- Benutzerspezifische Inhalte -->
+  <div id="admin-content" style="display:none;">
+    <h2>Adminbereich</h2>
+    <p>Dies ist der Adminbereich. Sie können hier Benutzerdaten verwalten.</p>
+  </div>
+  <div id="user-content" style="display:none;">
+    <h2>Benutzerbereich</h2>
+    <p>Dies ist der Benutzerbereich. Sie können Ihre persönlichen Daten einsehen.</p>
+  </div>
+
+  <!-- Ausloggen Button -->
+  <button id="logoutButton" onclick="logout()">Logout</button>
+</body>
+</html>
