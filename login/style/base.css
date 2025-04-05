@@ -9,6 +9,7 @@ body {
     align-items: center;
     flex-direction: column;
     color: white;
+    text-align: center;
   }
   
   .login-container {
@@ -17,7 +18,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 300px;
+    width: 250px;
     animation: fadeIn 0.8s ease-in-out;
   }
   
@@ -28,13 +29,14 @@ body {
   
   input[type="text"],
   input[type="password"] {
-    width: 100%;
+    width: 100%; /* Festlegung der Breite auf 80% des Containers */
     padding: 12px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 16px;
     transition: border 0.3s ease;
+    box-sizing: border-box; /* Verhindert, dass Padding die Gesamtbreite beeinflusst */
   }
   
   input[type="text"]:focus,
