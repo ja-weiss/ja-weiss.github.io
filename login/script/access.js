@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem("isLoggedIn") !== "true") {
-      window.location.href = "login.html"; // Weiterleitung zur Login-Seite, wenn der Benutzer nicht eingeloggt ist
+      window.location.href = "../login.html"; // Weiterleitung zur Login-Seite, wenn der Benutzer nicht eingeloggt ist
     }
   
     // Benutzername und Rolle aus localStorage holen und anzeigen
