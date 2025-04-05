@@ -62,4 +62,3 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleSwitch.checked = true;  // Setze den Schalter auf "on"
   }
 });
-

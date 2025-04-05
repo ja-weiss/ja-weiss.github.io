@@ -37,22 +37,18 @@
             </div>
             <div id="particles"></div>
 
-            <header>
-                <h1 data-lang="welcome">Willkommen auf meiner Webseite!</h1>
-                <p data-lang="info">Optimized for desktop, this site may not render as intended on mobile.</p>
-                <p id="clock" data-lang="clock">Lade Uhr...</p>
+        <header>
+            <h1 data-lang="welcome">Willkommen auf meiner Webseite!</h1>
+            <p data-lang="info">Optimized for desktop, this site may not render as intended on mobile.</p>
+            <p id="clock" data-lang="clock">Lade Uhr...</p>
         
-                <select id="languageSwitcher">
-                    <option value="de">🇩🇪</option>
-                    <option value="en">🇬🇧</option>
-                    <option value="fr">🇫🇷</option>
-                </select>
-            </header>
-                <label class="vbgSwitch">
-                    <input type="checkbox" id="toggleVideoBG" onclick="toggleVideoBG()" checked>
-                    <span class="vbgSlider" id="vbgSlider"></span>
-                    <span class="switchText">Video<br>Background</span>
-                </label>
+            <select id="languageSwitcher">
+                <option value="de">🇩🇪</option>
+                <option value="en">🇬🇧</option>
+                <option value="fr">🇫🇷</option>
+            </select>
+        </header>
+                
         <div class="defaultPage-wrapper2">
 
             <main class="main1">
@@ -73,11 +69,23 @@
             </main>
 
             <main class="main2">
-                <p>Dark Mode</p>
-                <label class="darkModeSwitch"> 
+                <div class="switchWrapper">
+                <span class="switchText">Dark Mode</span>
+                <label class="darkModeSwitch">
+                    
                     <input type="checkbox" id="toggleDarkMode" onclick="toggleDarkMode()"> 
                     <span class="darkModeSlider"></span>
                 </label>
+            </div>
+                <div class="switchWrapper">
+                <span class="switchText">Video Background</span>
+                <label class="vbgSwitch">
+                    
+                    <input type="checkbox" id="toggleVideoBG" onclick="toggleVideoBG()" checked>
+                    <span class="vbgSlider" id="vbgSlider"></span>
+                    
+                </label>
+            </div>
                 <button class="button4" id="button4">Fancy Button</button>
             </main>
 
@@ -101,6 +109,10 @@
             <p>&copy; 2025 Jacob Weiß</p>
         </footer>
     </div>
+
+    <a href="login.html" id="lockButton" title="Login">
+        <i class="fas fa-lock"></i>
+    </a>
 
     <div class="netflixStartUp" id="netflixStartUp">
         <video id="netflixIntro" src="images/netflix-intro.mp4" type="mp4"></video>

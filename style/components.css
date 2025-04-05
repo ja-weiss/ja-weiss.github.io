@@ -3,7 +3,25 @@
     font-family: 'Arial', sans-serif;
     color: #fff;
     text-align: center;
-    margin-top: 20px;
+}
+
+/* Stil für den Schloss-Button */
+#lockButton {
+    position: absolute;
+    bottom: 20px;    /* Abstand von unten */
+    left: 20px;      /* Abstand von links */
+    background-color: #333;  /* Dunkler Hintergrund */
+    color: white;          /* Weiße Schriftfarbe */
+    padding: 10px;
+    border-radius: 50%;     /* Kreisform */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Schlagschatten für den Button */
+    font-size: 20px;  /* Schriftgröße */
+    cursor: pointer;  /* Zeiger-Cursor beim Hover */
+    text-decoration: none; /* Entfernt die Unterstreichung des Links */
+    transition: all 0.3s ease; /* Sanfter Übergang für Hover */
+} #lockButton:hover {
+    background-color: #1DB954; /* Wechsel der Hintergrundfarbe beim Hover */
+    transform: scale(1.1);  /* Vergrößerung des Buttons beim Hover */
 }
 
 /* Language Switcher */
@@ -238,13 +256,25 @@
     outline: none;
 }
 
+.switchWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Abstand nach unten */
+}
+
+.switchText {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 6px; /* Abstand zum Switch */
+    text-align: center;
+}
 
 .darkModeSwitch {
     position: relative;
     display: inline-block;
     width: 80px;
     height: 40px;
-    transform: translateY(-75px); /* Vertikale Positionierung */
 }
 
 /* Das eigentliche Checkbox-Element ausblenden */
@@ -300,13 +330,10 @@ input:checked + .darkModeSlider:before {
 
 /* Der Wrapper für den Schalter */
 .vbgSwitch {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: inline-flex;
-    align-items: center;
+    position: relative;
     width: 60px;
     height: 34px;
+    scale: 1.1;
   }
   /* Der eigentliche Schalter (Hintergrund) */
   .vbgSwitch input {
@@ -346,13 +373,6 @@ input:checked + .darkModeSlider:before {
   .vbgSwitch input:checked + .vbgSlider:before {
     transform: translateX(26px);
   }
-  .switchText {
-    margin-left: -85px;  /* Abstand zwischen Schalter und Text */
-    font-size: 13px;    /* Schriftgröße des Textes */
-    color: #fff;        /* Farbe des Textes */
-    display: inline-block;
-    line-height: 17px;  /* Vertikale Ausrichtung des Textes */
-}
 .vbgSwitch:focus {
     outline: none;
 }
