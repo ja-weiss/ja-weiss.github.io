@@ -6,55 +6,156 @@
     <title>User Info</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="info/style/info.css">
-    <script src="info/script/info.js"></script>
+    <script defer src="info/script/info.js"></script>
 </head>
 <body>
     <header>
         <h1>Benutzerinformationen</h1>
         <p>Diese Seite zeigt alle verfügbaren Informationen über den Benutzer, die auf dieser Website gesammelt werden können.</p>
         <p>Je nach Gerät, Browser und Einstellungen können bestimmte Informationen eventuell falsch oder nicht erfasst werden.</p>
+        <label for="lang-select"><strong>Sprache:</strong></label>
+        <select id="lang-select">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
     </header>
     <div class="content">
         <h2>Website</h2>
         <ul>
-            <li><strong>Aktuelle Seite:</strong> <span id="page-visited"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die URL der aktuellen Seite.</span></span></li>
-            <li><strong>Verweildauer:</strong> <span id="time-spent"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die verbrachte Zeit auf der Website seit dem letzten Laden.</span></span></li>
-            <li><strong>Letzter Klick (x, y):</strong> <span id="last-click"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Koordinaten des letzten Klicks (x, y) auf der Seite. Leer, falls seit dem Laden der Seite noch kein Klick ausgeführt wurde.</span></span></li>
-            <li><strong>Letzte Seite:</strong> <span id="referrer"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die URL der Seite, über die diese Seite aufgerufen wurde, falls eine Weiterleitung stattgefunden hat.</span></span></li>
+            <li><strong>Aktuelle Seite:</strong> <span id="page-visited"></span>
+                <span class="info-btn" data-tooltip-id="page-visited">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Verweildauer:</strong> <span id="time-spent"></span>
+                <span class="info-btn" data-tooltip-id="time-spent">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Letzter Klick (x, y):</strong> <span id="last-click"></span>
+                <span class="info-btn" data-tooltip-id="last-click">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Letzte Seite:</strong> <span id="referrer"></span>
+                <span class="info-btn" data-tooltip-id="referrer">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
         </ul>
         <h2>Geolokalisierung</h2>
         <ul>
-            <li><strong>Land:</strong> <span id="country"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Das Land, über das die Seite aufgerufen wird. (Funktioniert ohne Standort-Berechtigung)</span></span></li>
-            <li><strong>Stadt:</strong> <span id="city"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Stadt, über die die Seite aufgerufen wird. (Funktioniert ohne Standort-Berechtigung)</span></span></li>
-            <li><strong>Region:</strong> <span id="region"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Region (Bundesland oder Provinz), über die die Seite aufgerufen wird. (Funktioniert ohne Standort-Berechtigung)</span></span></li>
-            <li><strong>Koordinaten (Benötigt Standort-Berechtigung):</strong> <span id="coordinates"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die geografischen Koordinaten (Breiten- und Längengrad) des Gerätestandorts, falls die Standort-Berechtigung erteilt wurde.</span></span></li>
+            <li><strong>Land:</strong> <span id="country"></span>
+                <span class="info-btn" data-tooltip-id="country">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Stadt:</strong> <span id="city"></span>
+                <span class="info-btn" data-tooltip-id="city">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Region:</strong> <span id="region"></span>
+                <span class="info-btn" data-tooltip-id="region">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Koordinaten (Benötigt Standort-Berechtigung):</strong> <span id="coordinates"></span>
+                <span class="info-btn" data-tooltip-id="coordinates">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
         </ul>
         <h2>Geräteinformationen</h2>
         <h3>Verbindung</h3>
         <ul>
-            <li><strong>IP-Adresse:</strong> <span id="ip"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die IP-Adresse des Geräts.</span></span></li>
-            <li><strong>Vermutete Verbindungsart:</strong> <span id="connection-type"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Art der Netzwerkverbindung kann aufgrund der Netzwerkinfrastruktur des Geräts (z.B. Hybridnetzwerk, also Mobilfunk- und WLAN-Unterstützung) eventuell nicht die tatsächliche Verbindung anzeigen.</span></span></li>
+            <li><strong>IP-Adresse:</strong> <span id="ip"></span>
+                <span class="info-btn" data-tooltip-id="ip">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Vermutete Verbindungsart:</strong> <span id="connection-type"></span>
+                <span class="info-btn" data-tooltip-id="connection-type">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
         </ul>
         <h3>Browser</h3>
         <ul>
-            <li><strong>Browser:</strong> <span id="browser"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Abwärtskompatibilität (Betriebssystem; Architektur) Rendering Engine (Kompatibilität) Browsername Rendering-Engine [Browser]</span></span></li>
-            <li><strong>Auflösung:</strong> <span id="resolution"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Auflösung des Browserfensters (Breite x Höhe in Pixeln).</span></span></li>
-            <li><strong>Plugins:</strong> <span id="plugins"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">System-Plugins (keine Browser Add-Ons)</span></span></li>
+            <li><strong>User-Agent:</strong> <span id="user-agent"></span>
+                <span class="info-btn" data-tooltip-id="user-agent">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Browser:</strong> <span id="browser"></span>
+                <span class="info-btn" data-tooltip-id="browser">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Betriebssystem:</strong> <span id="os-detected"></span>
+                <span class="info-btn" data-tooltip-id="os-detected">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Auflösung:</strong> <span id="resolution"></span>
+                <span class="info-btn" data-tooltip-id="resolution">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Plugins:</strong> <span id="plugins"></span>
+                <span class="info-btn" data-tooltip-id="plugins">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
         </ul>
         <h3>System</h3>
         <ul>
-            <li><strong>Betriebssystem:</strong> <span id="os"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Das Betriebssystem des Geräts.</span></span></li>
-            <li><strong>Spracheinstellung:</strong> <span id="language"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Sprache, die im Browser oder Betriebssystem eingestellt ist.</span></span></li>
-            <li><strong>Batteriestatus:</strong> <span id="battery-status"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Der aktuelle Akku- und Ladezustand des Geräts.</span></span></li>
-            <li><strong>CPU-Kerne:</strong> <span id="cpu-cores"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die Anzahl der Kerne der CPU (Prozessor) des Geräts.</span></span></li>
-            <li><strong>RAM:</strong> <span id="device-memory"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Der installierte RAM (Arbeitsspeicher) des Geräts.</span></span></li>
-            <li><strong>Speicherstatus:</strong> <span id="storage-status"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Der verfügbare Speicherplatz auf dem Gerät.</span></span></li>
-            <li><strong>Bildschirmorientierung:</strong> <span id="screen-orientation"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die aktuelle Ausrichtung des Bildschirms (Hochformat oder Querformat).</span></span></li>
-            <li><strong>Maximale Multitouch-Punkte:</strong> <span id="max-touchpoints"></span> <span class="info-btn"><i class="fas fa-info-circle"></i><span class="tooltip">Die maximale Anzahl gleichzeitiger Touch-Eingaben, die das Display des Geräts unterstützt.</span></span></li>      
+            <li><strong>Betriebssystem:</strong> <span id="os"></span>
+                <span class="info-btn" data-tooltip-id="os">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Spracheinstellung:</strong> <span id="language"></span>
+                <span class="info-btn" data-tooltip-id="language">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Batteriestatus:</strong> <span id="battery-status"></span>
+                <span class="info-btn" data-tooltip-id="battery-status">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>CPU-Kerne:</strong> <span id="cpu-cores"></span>
+                <span class="info-btn" data-tooltip-id="cpu-cores">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>RAM:</strong> <span id="device-memory"></span>
+                <span class="info-btn" data-tooltip-id="device-memory">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Speicherstatus:</strong> <span id="storage-status"></span>
+                <span class="info-btn" data-tooltip-id="storage-status">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Bildschirmorientierung:</strong> <span id="screen-orientation"></span>
+                <span class="info-btn" data-tooltip-id="screen-orientation">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>
+            <li><strong>Maximale Multitouch-Punkte:</strong> <span id="max-touchpoints"></span>
+                <span class="info-btn" data-tooltip-id="max-touchpoints">
+                    <i class="fas fa-info-circle"></i><span class="tooltip"></span>
+                </span>
+            </li>      
         </ul>
         <footer>
             <p>Alle Daten werden nur zu Demonstrationszwecken gesammelt und nicht gespeichert.</p>
         </footer>
     </div>
+    <script defer src="info/script/tooltips.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,28 @@
+{
+    "tooltips": {
+      "page-visited": "The URL of the current page.",
+      "time-spent": "The time spent on the website since the last page load.",
+      "last-click": "The coordinates of the last click (x, y) on the page. Empty if no click was made since the page was loaded.",
+      "referrer": "The URL of the page that referred to this page, if a redirect occurred.",
+      "country": "The country from which the page is accessed. (Works without location permission)",
+      "city": "The city from which the page is accessed based on the IP address. May display the nearest larger city.",
+      "region": "The region (state or province) from which the page is accessed. (Works without location permission)",
+      "coordinates": "The geographical coordinates (latitude and longitude) of the device's location, if location permission was granted.",
+      "ip": "The IP address of the device.",
+      "connection-type": "The type of network connection may not reflect the actual connection due to the device's network infrastructure (e.g., hybrid network, mobile and Wi-Fi support).",
+      "user-agent": "Backward compatibility (Operating System; Architecture) Rendering Engine (Compatibility) Browser name Rendering Engine [Browser]",
+      "browser": "The detected browser based on the user-agent string.",
+      "os-detected": "The detected operating system based on the user-agent or platform data.",
+      "resolution": "The resolution of the browser window (width x height in pixels).",
+      "plugins": "System plugins (no browser add-ons)",
+      "os": "The operating system of the device.",
+      "language": "The language set in the browser or operating system.",
+      "battery-status": "The current battery and charging status of the device.",
+      "cpu-cores": "The number of CPU cores (processor) in the device.",
+      "device-memory": "The installed RAM (memory) of the device.",
+      "storage-status": "The available storage space on the device.",
+      "screen-orientation": "The current screen orientation (portrait or landscape).",
+      "max-touchpoints": "The maximum number of simultaneous touch inputs the device's display supports."
+    }
+  }
+  

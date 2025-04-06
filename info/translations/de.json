@@ -1,0 +1,28 @@
+{
+    "tooltips": {
+      "page-visited": "Die URL der aktuellen Seite.",
+      "time-spent": "Die verbrachte Zeit auf der Website seit dem letzten Laden.",
+      "last-click": "Die Koordinaten des letzten Klicks (x, y) auf der Seite. Leer, falls seit dem Laden der Seite noch kein Klick ausgeführt wurde.",
+      "referrer": "Die URL der Seite, über die diese Seite aufgerufen wurde, falls eine Weiterleitung stattgefunden hat.",
+      "country": "Das Land, über das die Seite aufgerufen wird. (Funktioniert ohne Standort-Berechtigung)",
+      "city": "Die Stadt, über die die Seite aufgerufen wird basierend auf der IP-Adresse. Kann eventuell die nächstgelegene größere Stadt anzeigen.",
+      "region": "Die Region (Bundesland oder Provinz), über die die Seite aufgerufen wird. (Funktioniert ohne Standort-Berechtigung)",
+      "coordinates": "Die geografischen Koordinaten (Breiten- und Längengrad) des Gerätestandorts, falls die Standort-Berechtigung erteilt wurde.",
+      "ip": "Die IP-Adresse des Geräts.",
+      "connection-type": "Die Art der Netzwerkverbindung kann aufgrund der Netzwerkinfrastruktur des Geräts (z.B. Hybridnetzwerk, also Mobilfunk- und WLAN-Unterstützung) eventuell nicht die tatsächliche Verbindung anzeigen.",
+      "user-agent": "Abwärtskompatibilität (Betriebssystem; Architektur) Rendering Engine (Kompatibilität) Browsername Rendering-Engine [Browser]",
+      "browser": "Der erkannte Browser, basierend auf dem User-Agent-String.",
+      "os-detected": "Das erkannte Betriebssystem, basierend auf dem User-Agent oder Plattform-Daten.",
+      "resolution": "Die Auflösung des Browserfensters (Breite x Höhe in Pixeln).",
+      "plugins": "System-Plugins (keine Browser Add-Ons)",
+      "os": "Das Betriebssystem des Geräts.",
+      "language": "Die Sprache, die im Browser oder Betriebssystem eingestellt ist.",
+      "battery-status": "Der aktuelle Akku- und Ladezustand des Geräts.",
+      "cpu-cores": "Die Anzahl der Kerne der CPU (Prozessor) des Geräts.",
+      "device-memory": "Der installierte RAM (Arbeitsspeicher) des Geräts.",
+      "storage-status": "Der verfügbare Speicherplatz auf dem Gerät.",
+      "screen-orientation": "Die aktuelle Ausrichtung des Bildschirms (Hochformat oder Querformat).",
+      "max-touchpoints": "Die maximale Anzahl gleichzeitiger Touch-Eingaben, die das Display des Geräts unterstützt."
+    }
+  }
+  

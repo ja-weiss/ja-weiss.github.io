@@ -6,11 +6,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const resolution = `${window.screen.width}x${window.screen.height}`;
 
     // Zeige Browser-Informationen an
-    document.getElementById('browser').textContent = browser;
+    document.getElementById('user-agent').textContent = browser;
     document.getElementById('os').textContent = os;
     document.getElementById('language').textContent = language;
     document.getElementById('resolution').textContent = resolution;
 
+    function detectBrowser(userAgent) {
+        if (userAgent.includes("Firefox/")) return "Firefox";
+        if (userAgent.includes("Edg/")) return "Microsoft Edge";
+        if (userAgent.includes("OPR/") || userAgent.includes("Opera")) return "Opera";
+        if (userAgent.includes("Chrome/")) return "Google Chrome";
+        if (userAgent.includes("Safari/")) return "Safari";
+        return "Unbekannt";
+    }
+    
+    function detectOS(userAgent) {
+        if (userAgent.includes("Windows NT 10.0")) return "Windows 10";
+        if (userAgent.includes("Windows NT 11.0")) return "Windows 11";
+        if (userAgent.includes("Mac OS X")) return "macOS";
+        if (userAgent.includes("Android")) return "Android";
+        if (userAgent.includes("iPhone")) return "iOS";
+        if (userAgent.includes("Linux")) return "Linux";
+        return "Unbekannt";
+    }
+    
+    // In deiner DOMContentLoaded-Funktion:
+    const browserDetected = detectBrowser(browser);
+    const osDetected = detectOS(browser);
+    document.getElementById('browser').textContent = browserDetected;
+    document.getElementById('os-detected').textContent = osDetected;
+    
     // Geolocation: Browser-based
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -86,9 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     
-    
-
-
     // Maximale Anzahl von Touchpunkten
     document.getElementById('max-touchpoints').textContent = navigator.maxTouchPoints || "Nicht verfügbar";
 
