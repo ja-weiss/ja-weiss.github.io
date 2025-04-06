@@ -3,7 +3,7 @@
     "header-title": "User Information",
     "header-description": "This page displays all available information about the user that can be collected on this website.",
     "header-note": "Depending on the device, browser, and settings, some information may be incorrect or not collected.",
-    "language-label": "Language",
+    "language-label": "Language:",
     "section-website": "Website",
     "current-page": "Current Page:",
     "time-spent": "Time Spent:",
