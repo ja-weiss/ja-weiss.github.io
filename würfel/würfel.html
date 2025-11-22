@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Würfel</title>
+</head>
+
+<body>
+    <h1>Würfel Simulator</h1>
+    <p id="result">Drücke den Button</p>
+    <button onClick="rollDice()">Würfeln</button>
+
+    <script>
+        function rollDice() {
+            const diceRoll = Math.floor(Math.random() * 6) + 1;
+            document.getElementById('result').textContent = `Du hast eine ${diceRoll} gewürfelt!`;
+        }
+    </script>
+</body>
+
+</html>
